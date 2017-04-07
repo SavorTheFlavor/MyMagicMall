@@ -16,6 +16,8 @@
 		<property name="addr"/>
 		<property name="state"/>
 		<property name="code"/>
+		<property name="balance"/>
+		<property name="coupon"/>
 		
 		<set name="orders" cascade="delete">
 			<key column="uid"/>

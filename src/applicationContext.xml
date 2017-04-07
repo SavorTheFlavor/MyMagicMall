@@ -102,6 +102,11 @@
 		<property name="orderService" ref="orderService"/>
 	</bean>
 	
+	<!-- 配置GameAction -->
+	<bean id="gameAction" class="com.me.shop.action.GameAction" scope="prototype">
+		<property name="userService" ref="userService"></property>
+	</bean>
+	
 	<!-- 配置后台登录的Action -->
 	<bean id="adminUserAction" class="com.me.shop.action.AdminUserAction" scope="prototype">
 		<property name="adminUserService" ref="adminUserService"/>

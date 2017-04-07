@@ -63,6 +63,11 @@
 			<result name="updateStateSuccess" type="redirectAction">order_findByUid.action?page=1</result>
 		</action>
 		
+		<!-- 游戏的Action -->
+		<action name="game_*" class="gameAction" method="{1}">
+			<result name="rotatePage">/someEffects/welfare-disc-spinning/welfare.jsp</result>
+		</action>
+		
 		<!-- 后台登录Action -->
 		<action name="adminUser_*" class="adminUserAction" method="{1}">
 			<result name="loginFail">/admin/index.jsp</result>

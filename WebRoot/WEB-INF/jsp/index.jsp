@@ -43,19 +43,16 @@
 
 
 <div class="container header">
-	<div class="span5">
 
+	<div class="span5">
+		<h4><a href="${pageContext.request.contextPath}/someEffects/welfare-disc-spinning/welfare.jsp"  target="_blank">福利大转盘</a></h4>
 	</div>
 	<div class="span9">
-<!-- <div class="headerAd"> -->
-<%-- 	<img src="${pageContext.request.contextPath}/image/header.jpg" width="320" height="50" alt="正品保障" title="正品保障"/> --%>
-<!-- </div>	 -->
-</div>
+  </div>
 	
 	<%@ include file="menu.jsp" %>
 
 </div>	
-
 <div class="container index">
 
 		<div class="span24">
@@ -169,11 +166,7 @@
 							<li>
 								<a target="_blank"></a>
 							</li>
-					</ul>
-<!-- 					<div class="newProductAd">
-									<img src="${pageContext.request.contextPath}/image/q.jpg" width="260" height="343" alt="最新商品" title="最新商品">
-						</div>
-						 -->						
+					</ul>					
 						 <ul class="tabContent" style="display: block;">
 						 	<s:iterator var="p" value="nList">
 									<li>
@@ -237,15 +230,11 @@
 		</div>
 	</div>
 <div class="container footer">
-<!-- 	<div class="span24"> -->
-<!-- 		<div class="footerAd"> -->
-<%-- 					<img src="${pageContext.request.contextPath}/image/footer.jpg" width="950" height="52" alt="我们的优势" title="我们的优势"> --%>
-<!-- </div>	</div> -->
 
 		<div class="copyright">All Rights Reserved  2017 MyHaiyinSport</div>
 	</div>
 	
-      <script src="${pageContext.request.contextPath}/countdown/js/digits.js" type="text/javascript"></script>
+      <script src="${pageContext.request.contextPath}/someEffects/countdown/js/digits.js" type="text/javascript"></script>
        <script charset="utf-8" src="${pageContext.request.contextPath}/countdown/js/countdown.js" type="text/javascript"></script>
 </body>
 </html>

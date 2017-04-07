@@ -23,6 +23,8 @@ public class User {
 	private String username;
 	private String password;
 	private String name;
+	private double balance;//钱
+	private int coupon;//优惠券
 	private String email;
 	private String phone;
 	private String addr;
@@ -89,6 +91,18 @@ public class User {
 	}
 	public void setOrders(Set<Order> orders) {
 		this.orders = orders;
+	}
+	public double getBalance() {
+		return balance;
+	}
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+	public int getCoupon() {
+		return coupon;
+	}
+	public void setCoupon(int coupon) {
+		this.coupon = coupon;
 	}
 	
 }
