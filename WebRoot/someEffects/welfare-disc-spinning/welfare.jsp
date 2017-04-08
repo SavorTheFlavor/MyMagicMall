@@ -80,37 +80,39 @@ $(function(){
 					alert("请登录~！");
 					return;
 				}
+				var isEnough = true;
 				$.ajax({
-					  type: "get",
-					  dataType: "html",
+					  type: "post",
+					  dataType: "text",//返回的类型！！！！
 					  url: "${pageContext.request.contextPath}/game_luckDraw.action",
+					  async:false,//改为同步请求..
 					  success:
-						  function(msgggg){
-						  	  msg='<s:property value="#session.msgggg"/>';
-						  	  alert(msgggg);
-						  	  alert(data)
+						  function(msg){
 							  if(msg == "Non-existent"){
 								  alert("请登录~！");
 								  return;
 							  }
 							  if(msg == "notEnough"){
 								  alert("优惠券不够了呢...");
+								  isEnough = false;
 								  return;
 							  }
 							  $("#coupon").innerHTML='<s:property value="#session.existUser.coupon"/>';
 							  $("#balance").innerHTML='<s:property value="#session.existUser.balance"/>';
 					  }
 					});
-				var a = runzp();
-				 $(this).rotate({
-					 	duration:5000,               //转动时间
-					 	angle: 0,                    //起始角度
-            			animateTo:1440+a.angle,      //结束的角度
-						easing: $.easing.easeOutSine,//动画效果，需加载jquery.easing.min.js
-						callback: function(){
-							alert(a.prize+a.message);//简单的弹出获奖信息
-						}
-				 });
+					if(isEnough){
+						var a = runzp();
+						 $(this).rotate({
+							 	duration:5000,               //转动时间
+							 	angle: 0,                    //起始角度
+		            			animateTo:1440+a.angle,      //结束的角度
+								easing: $.easing.easeOutSine,//动画效果，需加载jquery.easing.min.js
+								callback: function(){
+									alert(a.prize+a.message);//简单的弹出获奖信息
+								}
+						 });
+					}
 			}
 		}
 	});

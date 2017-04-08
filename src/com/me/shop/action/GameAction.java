@@ -37,6 +37,7 @@ public class GameAction extends ActionSupport{
 			System.out.println("################################");
 			String msg = "Non-existent";
 			ServletActionContext.getResponse().getWriter().print(msg);
+			ServletActionContext.getResponse().getWriter().close();//要记得close！！！！不然返回整个页面！！！！
 			return "rotatePage";
 		}
 		int restCoupon = existUser.getCoupon();
@@ -44,6 +45,7 @@ public class GameAction extends ActionSupport{
 			System.out.println("################################");
 			String msg = "notEnough";
 			ServletActionContext.getResponse().getWriter().print(msg);
+			ServletActionContext.getResponse().getWriter().close();//要记得close！！！！不然返回整个页面！！！！
 			return "rotatePage";
 		}
 		restCoupon--;
