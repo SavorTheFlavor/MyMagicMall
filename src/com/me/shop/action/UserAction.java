@@ -35,6 +35,12 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 	public void setUserService(UserService userService) {
 		this.userService = userService;
 	}
+	
+	//接收要充值的金额
+	private double money;
+	public void setMoney(double money) {
+		this.money = money;
+	}
 
 	/**
 	 * 跳转到注册页面的执行方法
@@ -129,6 +135,35 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 			return "loginSuccess";
 		}
 	
+	}
+	
+	/**
+	 * 跳转到充值页面
+	 */
+	public String toCharge(){
+		User existUser = (User) ServletActionContext.getRequest().getSession()
+		.getAttribute("existUser");
+		if (existUser == null) {
+			return "login";
+		}
+		
+		return "chargePage";
+	}
+	
+	/**
+	 * 用户充值方法
+	 */
+	public String recharge(){
+		User existUser = (User) ServletActionContext.getRequest().getSession()
+		.getAttribute("existUser");
+		if (existUser == null) {
+			return "login";
+		}
+		
+		existUser.setBalance(money+existUser.getBalance());
+		userService.update(existUser);
+		
+		return "chargeSuccess";
 	}
 	
 	/**

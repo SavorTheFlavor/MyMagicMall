@@ -12,7 +12,8 @@
 			</s:if>
 			<s:else>
 			<li id="headerLogin" class="headerLogin" style="display: list-item;">
-				<s:property value="#session.existUser.name"/>
+				<s:property value="#session.existUser.name"/>&nbsp;
+				余额:<s:property value="#session.existUser.balance"/>
 				|</li>
 			<li id="headerLogin" class="headerLogin" style="display: list-item;">
 				<a href="${ pageContext.request.contextPath }/order_findByUid.action?page=1">我的订单</a>
@@ -22,9 +23,8 @@
 			</li>
 			</s:else>
 		
-			<li><a>充值</a> |</li>
-			<li><a>会员中心</a> |</li>
-			<li><a>关于我们</a></li>
+			<li><a href="${ pageContext.request.contextPath }/user_toCharge.action">充值</a> |</li>
+			<li><a>会员中心</a></li>
 		</ul>
 	</div>
 </div>
