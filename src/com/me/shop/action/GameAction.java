@@ -27,6 +27,17 @@ public class GameAction extends ActionSupport{
 		this.existUser = existUser;
 	}
 
+	
+	/**
+	 * 2048小游戏 -- 跳转到2048
+	 */
+	public String play2048(){
+		existUser = (User) ServletActionContext.getRequest().getSession().getAttribute("existUser");
+		if(existUser == null){
+			return "login";
+		}
+		return "2048";
+	}
 
 	/**抽奖
 	 * @throws IOException */

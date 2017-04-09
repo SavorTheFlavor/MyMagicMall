@@ -73,7 +73,7 @@
 		<a href="${pageContext.request.contextPath}/someEffects/welfare-disc-spinning/welfare.jsp"  target="_blank">福利大转盘</a>
 	</div>
 	<div class="game">
-		<a href="${pageContext.request.contextPath}/someEffects/welfare-disc-spinning/welfare.jsp"  target="_blank">游戏畅玩</a>
+		<a href="${pageContext.request.contextPath}/someEffects/games/game.jsp"  target="_blank">游戏畅玩</a>
 	</div>
 	<div class="span9">
   </div>
