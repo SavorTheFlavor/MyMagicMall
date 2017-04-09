@@ -28,9 +28,10 @@ public class ProductService {
 	}
 
 	// 首页上最新商品的查询
-	public List<Product> findNew() {
-		return productDao.findNew();
+	public List<Product> findOld() {
+		return productDao.findOld();
 	}
+	
 
 	// 根据商品ID查询商品
 	public Product findByPid(Integer pid) {

@@ -40,7 +40,7 @@ public class IndexAction extends ActionSupport{
 		// 保存到值栈中:
 		ActionContext.getContext().getValueStack().set("hList", hList);
 		// 查询最新商品:
-		List<Product> nList = productService.findNew();
+		List<Product> nList = productService.findOld();
 		// 保存到值栈中:
 		ActionContext.getContext().getValueStack().set("nList", nList);
 		return "index";

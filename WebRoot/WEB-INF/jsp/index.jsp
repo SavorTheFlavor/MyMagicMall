@@ -8,18 +8,43 @@
 <title>我的商城</title>
 <link href="${pageContext.request.contextPath}/css/slider.css" rel="stylesheet" type="text/css"/>
 <link href="${pageContext.request.contextPath}/css/common.css" rel="stylesheet" type="text/css"/>
-<link href="${pageContext.request.contextPath}/css/index.css" rel="stylesheet" type="text/css"/>
+<link href="${pageContext.request.contextPath}/css/index.css" rel="stylesheet" type="text/css"/>	
+	<!-- 游戏相关放样式，懒得放文件里 -->
 	<style type="text/css">
 		#time{
 			padding: 21px 8px 42px 91px;
     		margin: -20px 3px 0 0;
-		}
+		 }
 		#canvas{
 			position:absolute;
 			z-index:-99;
 		}
-
+		.welfare{
+			position:absolute;
+			width:90px;
+			height:50px;
+			text-align:center;
+			margin: 0 0 0 0;
+			background: url("${pageContext.request.contextPath}/someEffects/welfare-disc-spinning/images/W5P555VCFWH]TY0U{$AD9XW.gif");
+		}
+		.welfare:HOVER{
+			font-size:60px;
+			background: url("${pageContext.request.contextPath}/someEffects/welfare-disc-spinning/images/blueguy.gif");
+		}
+		.game{
+			position:absolute;
+			width:90px;
+			height:50px;
+			text-align:center;
+			margin: 0 0 0 140px;
+			background: url("${pageContext.request.contextPath}/someEffects/welfare-disc-spinning/images/blueguy.gif");
+		}
+		.game:HOVER{
+			font-size:60px;
+			background: url("${pageContext.request.contextPath}/someEffects/welfare-disc-spinning/images/W5P555VCFWH]TY0U{$AD9XW.gif");
+		}
 	</style>
+
 	
 	<!-- 特效 -->
 	<link href="${pageContext.request.contextPath}/decorations/css/bootstrap.css" rel="stylesheet" type="text/css"
@@ -44,8 +69,11 @@
 
 <div class="container header">
 
-	<div class="span5">
-		<h4><a href="${pageContext.request.contextPath}/someEffects/welfare-disc-spinning/welfare.jsp"  target="_blank">福利大转盘</a></h4>
+	<div class="welfare">
+		<a href="${pageContext.request.contextPath}/someEffects/welfare-disc-spinning/welfare.jsp"  target="_blank">福利大转盘</a>
+	</div>
+	<div class="game">
+		<a href="${pageContext.request.contextPath}/someEffects/welfare-disc-spinning/welfare.jsp"  target="_blank">游戏畅玩</a>
 	</div>
 	<div class="span9">
   </div>

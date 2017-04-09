@@ -51,7 +51,7 @@
 										商品价格
 									</td>
 									<td align="center" width="17%">
-										是否热门
+										是否全新
 									</td>
 									<td width="7%" align="center">
 										编辑

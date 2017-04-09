@@ -12,7 +12,7 @@
 			</s:if>
 			<s:else>
 			<li id="headerLogin" class="headerLogin" style="display: list-item;">
-				<s:property value="#session.existUser.name"/>&nbsp;
+				<s:property value="#session.existUser.name"/>
 				余额:<s:property value="#session.existUser.balance"/>
 				|</li>
 			<li id="headerLogin" class="headerLogin" style="display: list-item;">
@@ -23,7 +23,7 @@
 			</li>
 			</s:else>
 		
-			<li><a href="${ pageContext.request.contextPath }/user_toCharge.action">充值</a> |</li>
+			<li><a href="${ pageContext.request.contextPath }/user_toCharge.action">充值</a>|</li>
 			<li><a>会员中心</a></li>
 		</ul>
 	</div>

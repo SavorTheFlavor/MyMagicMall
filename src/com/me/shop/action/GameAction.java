@@ -32,9 +32,7 @@ public class GameAction extends ActionSupport{
 	 * @throws IOException */
 	public String luckDraw() throws IOException{
 		existUser = (User) ServletActionContext.getRequest().getSession().getAttribute("existUser");
-		System.out.println("@!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 		if(existUser == null){
-			System.out.println("################################");
 			String msg = "Non-existent";
 			ServletActionContext.getResponse().getWriter().print(msg);
 			ServletActionContext.getResponse().getWriter().close();//要记得close！！！！不然返回整个页面！！！！
@@ -42,7 +40,6 @@ public class GameAction extends ActionSupport{
 		}
 		int restCoupon = existUser.getCoupon();
 		if(restCoupon <= 0){
-			System.out.println("################################");
 			String msg = "notEnough";
 			ServletActionContext.getResponse().getWriter().print(msg);
 			ServletActionContext.getResponse().getWriter().close();//要记得close！！！！不然返回整个页面！！！！

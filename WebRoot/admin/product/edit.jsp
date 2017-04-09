@@ -31,7 +31,7 @@
 						<input type="text" name="pname" value="<s:property value="model.pname"/>" id="userAction_save_do_logonName" class="bg"/>
 					</td>
 					<td width="18%" align="center" bgColor="#f5fafe" class="ta_01">
-						是否热门：
+						是否全新：
 					</td>
 					<td class="ta_01" bgColor="#ffffff">
 						

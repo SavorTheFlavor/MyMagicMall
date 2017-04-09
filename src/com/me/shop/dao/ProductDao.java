@@ -36,11 +36,13 @@ public class ProductDao extends HibernateDaoSupport {
 	}
 
 	// 首页上最新商品的查询
-	public List<Product> findNew() {
+	public List<Product> findOld() {
 		// 使用离线条件查询:
 		DetachedCriteria criteria = DetachedCriteria.forClass(Product.class);
 		// 按日期进行倒序排序:
-		criteria.addOrder(Order.desc("pdate"));
+		criteria.addOrder(Order.asc("pdate"));
+		//不是热门的就是二手货
+		criteria.add(Restrictions.eq("is_hot", 0));
 		// 执行查询:
 		List<Product> list = this.getHibernateTemplate().findByCriteria(criteria, 0, 10);
 		return list;

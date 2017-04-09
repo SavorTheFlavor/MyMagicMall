@@ -13,7 +13,7 @@ public class Product {
 	private Double shop_price;
 	private String image;
 	private String pdesc;
-	private Integer is_hot;
+	private Integer is_hot;//是否为二手货，1不是，0是
 	private Date pdate;
 	// 二级分类的外键:使用二级分类的对象.
 	private CategorySecond categorySecond;
