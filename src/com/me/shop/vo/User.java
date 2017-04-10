@@ -25,6 +25,7 @@ public class User {
 	private String name;
 	private double balance;//钱
 	private int coupon;//优惠券
+	private int points;//积分
 	private String email;
 	private String phone;
 	private String addr;
@@ -103,6 +104,12 @@ public class User {
 	}
 	public void setCoupon(int coupon) {
 		this.coupon = coupon;
+	}
+	public int getPoints() {
+		return points;
+	}
+	public void setPoints(int points) {
+		this.points = points;
 	}
 	
 }

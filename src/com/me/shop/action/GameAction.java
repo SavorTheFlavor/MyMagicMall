@@ -13,6 +13,11 @@ import com.me.shop.vo.User;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
+/**
+ * 娱乐相关的action
+ * @author me
+ *
+ */
 public class GameAction extends ActionSupport{
 	
 	private UserService userService; 
@@ -62,4 +67,56 @@ public class GameAction extends ActionSupport{
 		return "rotatePage";
 	}
 	
+	private double money;//要兑换金钱的数量
+	public void setMoney(double money) {
+		this.money = money;
+	}
+	
+	private int coupon;//要兑换优惠券的数量
+	public void setCoupon(int coupon) {
+		this.coupon = coupon;
+	}
+	
+	private int points;//要兑换积分的数量,使用钱
+	public void setPoints(int points) {
+		this.points = points;
+	}
+
+
+	/**
+	 * 跳转到积分兑换界面
+	 */
+	public String toExchange(){
+		existUser = (User) ServletActionContext.getRequest().getSession().getAttribute("existUser");
+		if(existUser == null){
+			return "login";
+		}
+		return "exchangePage";
+	}
+	
+	/**
+	 * 积分兑换成钱及优惠券的页面
+	 *     积分换钱-->1024:10
+			积分换优惠券-->1024:1
+			钱换积分--->1:100
+	 */
+	public String exchange(){
+		existUser = (User) ServletActionContext.getRequest().getSession().getAttribute("existUser");
+		if(existUser == null){
+			return "login";
+		}
+		int curPoints = existUser.getPoints() + points;
+		double curMoney = existUser.getBalance() - points/100;
+		int restPoints = (int) (curPoints - Math.round(money*102.4) - coupon*1024);
+		if( restPoints < 0 ||  curMoney < 0){
+			this.addActionError("积分或钱不够!");
+			return "exchangePage";
+		}
+		existUser.setBalance(curMoney+money);
+		existUser.setPoints(restPoints);
+		existUser.setCoupon(existUser.getCoupon()+coupon);
+		userService.update(existUser);
+		return "exchangePage";
+	}
+
 }

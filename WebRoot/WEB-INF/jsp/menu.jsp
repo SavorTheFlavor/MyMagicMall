@@ -16,15 +16,14 @@
 				余额:<s:property value="#session.existUser.balance"/>
 				|</li>
 			<li id="headerLogin" class="headerLogin" style="display: list-item;">
-				<a href="${ pageContext.request.contextPath }/order_findByUid.action?page=1">我的订单</a>
-			|</li>
+				<a href="${ pageContext.request.contextPath }/order_findByUid.action?page=1">我的订单</a>|</li>
 			<li id="headerRegister" class="headerRegister"
 				style="display: list-item;"><a href="${ pageContext.request.contextPath }/user_quit.action">退出</a>|
 			</li>
 			</s:else>
 		
 			<li><a href="${ pageContext.request.contextPath }/user_toCharge.action">充值</a>|</li>
-			<li><a>会员中心</a></li>
+			<li><a href="${ pageContext.request.contextPath }/someEffects/floatingVapor/exchange.jsp">积分兑换</a></li>
 		</ul>
 	</div>
 </div>

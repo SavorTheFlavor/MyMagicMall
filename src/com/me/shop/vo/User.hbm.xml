@@ -18,6 +18,7 @@
 		<property name="code"/>
 		<property name="balance"/>
 		<property name="coupon"/>
+		<property name="points"/>
 		
 		<set name="orders" cascade="delete">
 			<key column="uid"/>

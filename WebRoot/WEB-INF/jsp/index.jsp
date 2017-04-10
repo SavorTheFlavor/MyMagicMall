@@ -258,7 +258,7 @@
 		</div>
 	</div>
 <div class="container footer">
-
+		<div style="font-size:4px">你是管理员？<a style="font-size:4px" href="${pageContext.request.contextPath}/admin">后台登录</a></div>
 		<div class="copyright">All Rights Reserved  2017 MyHaiyinSport</div>
 	</div>
 	

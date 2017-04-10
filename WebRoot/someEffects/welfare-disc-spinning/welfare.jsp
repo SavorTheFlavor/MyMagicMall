@@ -43,6 +43,7 @@ body{background:url("./images/background.jpg");}
 <body>
 	<div class="user_info">
 		<div id="coupon">优惠券：<s:property value="#session.existUser.coupon"/>张</div>
+		<div id="points">积分：<s:property value="#session.existUser.points"/></div>
 		<div id="balance">钱：<s:property value="#session.existUser.balance"/>元</div>
 	</div>
 	<div class="rotate-con-pan">
