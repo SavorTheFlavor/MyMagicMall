@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ taglib uri="/struts-tags"  prefix="s"%>
 <!DOCTYPE html">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -14,6 +15,12 @@
 <script type="text/javascript" src="./2048/js/show.js"></script>
 <script type="text/javascript" src="./2048/js/main.js"></script>
 
+<style type="text/css">
+	body {
+		background:url("../welfare-disc-spinning/images/background.jpg");
+	}
+</style>
+
 </head>
 <body>
 
@@ -21,6 +28,7 @@
     <h1>2048</h1>
     <a href="javascript:newgame();" id="newgamebutton"  onclick="newgame()">重新开始</a>
     <p>得分:<span id="score">0</span></p>
+    <s:actionmessage/>
 </div>
 
 <div id="grid-container">

@@ -43,6 +43,11 @@ public class GameAction extends ActionSupport{
 		}
 		return "2048";
 	}
+	
+	public String accountFor2048(){
+		this.addActionMessage("sad");
+		return null;
+	}
 
 	/**抽奖
 	 * @throws IOException */

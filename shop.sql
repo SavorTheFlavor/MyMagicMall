@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50520
 File Encoding         : 65001
 
-Date: 2017-04-09 15:35:40
+Date: 2017-04-11 13:23:54
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -119,7 +119,7 @@ CREATE TABLE `orderitem` (
   KEY `FKE8B2AB6140ACF87A` (`oid`),
   CONSTRAINT `FKE8B2AB6140ACF87A` FOREIGN KEY (`oid`) REFERENCES `orders` (`oid`),
   CONSTRAINT `FKE8B2AB6171DB7AE4` FOREIGN KEY (`pid`) REFERENCES `product` (`pid`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of orderitem
@@ -141,7 +141,7 @@ CREATE TABLE `orders` (
   PRIMARY KEY (`oid`),
   KEY `FKC3DF62E5AA3D9C7` (`uid`),
   CONSTRAINT `FKC3DF62E5AA3D9C7` FOREIGN KEY (`uid`) REFERENCES `user` (`uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=9005 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of orders
@@ -195,12 +195,13 @@ CREATE TABLE `user` (
   `code` varchar(64) DEFAULT NULL,
   `balance` double(44,6) DEFAULT NULL,
   `coupon` int(12) DEFAULT NULL,
+  `points` int(23) DEFAULT '0',
   PRIMARY KEY (`uid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('7', 'aaa', 'aaa', '沈晶秉', 'aaa@shop.com', '15726607618', '南极', '1', null, '42.000000', '0');
-INSERT INTO `user` VALUES ('8', 'bbb', 'bbb', '沃姚库', 'bbb@shop.com', '18726607618', '月球', '1', '', '111.000000', '1');
+INSERT INTO `user` VALUES ('7', 'aaa', 'aaa', '沈晶秉', 'aaa@shop.com', '15726607618', '南极', '1', null, '1041.000000', '13', '77119');
+INSERT INTO `user` VALUES ('8', 'bbb', 'bbb', '沃姚库', 'bbb@shop.com', '18726607618', '月球', '1', '', '111.000000', '1', '0');
 SET FOREIGN_KEY_CHECKS=1;

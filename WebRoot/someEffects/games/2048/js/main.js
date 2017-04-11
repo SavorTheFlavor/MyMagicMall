@@ -229,6 +229,12 @@ function isgameover(){
 
 function gameover(){
     alert("Gameover!");
+    $.ajax({
+		  type: "post",
+		  dataType: "text",//返回的类型！！！！
+		  url: "${pageContext.request.contextPath}/game_accountFor2048.action",
+		  async:false//改为同步请求..
+		});
 }
 
 function moveLeft(){
