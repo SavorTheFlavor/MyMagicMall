@@ -14,24 +14,25 @@
 	rel="stylesheet" type="text/css" />
 <link href="${pageContext.request.contextPath}/css/product.css"
 	rel="stylesheet" type="text/css" />
-
+<style type="text/css">
+body{
+	background:url("${pageContext.request.contextPath}/image/background.jpg");
+}
+.copyright{
+	margin:25% 0 0 50%;
+}
+</style>
 </head>
 <body>
 
 	<div class="container header">
-		<div class="span5">
-			<div class="logo">
-				<a href="./网上商城/index.htm"> <img
-					src="${pageContext.request.contextPath}/image/r___________renleipic_01/logo.gif"
-					alt="传智播客" /> </a>
-			</div>
+	<div class="span5">
+		<div class="logo">
+			<a>
+				<img src="${pageContext.request.contextPath}/someEffects/welfare-disc-spinning/images/W5P555VCFWH]TY0U{$AD9XW.gif" alt="趣味商城" />
+			</a>
 		</div>
-		<div class="span9">
-			<div class="headerAd">
-				<img src="${pageContext.request.contextPath}/image/header.jpg"
-					width="320" height="50" alt="正品保障" title="正品保障" />
-			</div>
-		</div>
+	</div>
 
 		<%@ include file="menu.jsp"%>
 
@@ -132,31 +133,12 @@
 
 
 		</div>
-
 	</div>
 	<div class="container footer">
 		<div class="span24">
-			<div class="footerAd">
-				<img src="image\r___________renleipic_01/footer.jpg" alt="我们的优势"
-					title="我们的优势" height="52" width="950">
-			</div>
-		</div>
-		<div class="span24">
-			<ul class="bottomNav">
-				<li><a href="#">关于我们</a> |</li>
-				<li><a href="#">联系我们</a> |</li>
-				<li><a href="#">诚聘英才</a> |</li>
-				<li><a href="#">法律声明</a> |</li>
-				<li><a>友情链接</a> |</li>
-				<li><a target="_blank">支付方式</a> |</li>
-				<li><a target="_blank">配送方式</a> |</li>
-				<li><a>SHOP++官网</a> |</li>
-				<li><a>SHOP++论坛</a></li>
-			</ul>
-		</div>
-		<div class="span24">
-			<div class="copyright">All Rights Reserved  2017 MyHaiyinSport</div>
+			<div class="copyright">All Rights Reserved  2017 MyInterestingShopMall</div>
 		</div>
 	</div>
+
 </body>
 </html>

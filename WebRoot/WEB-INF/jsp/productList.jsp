@@ -6,17 +6,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-<title>网上商城</title>
+<title>趣味商城</title>
 <link href="${pageContext.request.contextPath}/css/common.css" rel="stylesheet" type="text/css"/>
 <link href="${pageContext.request.contextPath}/css/product.css" rel="stylesheet" type="text/css"/>
-
+<style type="text/css">
+body{
+	background:url("${pageContext.request.contextPath}/image/background.jpg");
+}
+.logo a img{
+	width:100px;
+	background: repeat-x;
+}
+</style>
 </head>
 <body>
 <div class="container header">
 	<div class="span5">
 		<div class="logo">
-			<a href="http://localhost:8080/mango/">
-				<img src="${pageContext.request.contextPath}/image/r___________renleipic_01/logo.gif" alt="我的商城">
+			<a href="#">
+				<img src="${pageContext.request.contextPath}/someEffects/welfare-disc-spinning/images/blueguy.gif" alt="趣味商城">
 			</a>
 		</div>
 	</div>
@@ -51,7 +59,7 @@
 								<li>
 										<a href="${ pageContext.request.contextPath }/product_findByPid.action?pid=<s:property value="#p.pid"/>">
 											<img src="${pageContext.request.contextPath}/<s:property value="#p.image"/>" width="170" height="170"  style="display: inline-block;">
-											<span style='color:green'>
+											<span style='color:pink'>
 											 <s:property value="#p.pname"/>
 											</span>
 										</a>
@@ -108,7 +116,7 @@
 <div class="container footer">
 
 	<div class="span24">
-		<div class="copyright">All Rights Reserved  2017 MyHaiyinSport</div>
+		<div class="copyright">All Rights Reserved  2017 MyInterestingShopMall</div>
 	</div>
 </div>
 </body></html>

@@ -78,6 +78,11 @@
 		img1.src="${pageContext.request.contextPath}/checkImg.action?"+new Date().getTime();
 	}
 </script>
+<style type="text/css">
+body{
+	background:url("${pageContext.request.contextPath}/image/background.jpg");
+}
+</style>
 </head>
 <body>
 <div class="container header">
@@ -224,7 +229,7 @@
 					<img src="${pageContext.request.contextPath}/image/footer.jpg" width="950" height="52" alt="我们的优势" title="我们的优势">
 </div>	</div>
 	<div class="span24">
-		<div class="copyright">All Rights Reserved  2017 MyHaiyinSport</div>
+		<div class="copyright">All Rights Reserved  2017 MyInterestingShopMall</div>
 	</div>
 </div>
 <div id="_my97DP" style="position: absolute; top: -1970px; left: -1970px;"><iframe style="width: 190px; height: 191px;" src="./会员注册 - Powered By Mango Team_files/My97DatePicker.htm" frameborder="0" border="0" scrolling="no"></iframe></div></body></html>

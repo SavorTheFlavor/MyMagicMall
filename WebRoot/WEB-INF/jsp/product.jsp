@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-<title>网上商城</title>
+<title>趣味商城</title>
 <link href="${pageContext.request.contextPath}/css/common.css" rel="stylesheet" type="text/css"/>
 <link href="${pageContext.request.contextPath}/css/product.css" rel="stylesheet" type="text/css"/>
 <script>
@@ -12,8 +12,12 @@
 		document.getElementById("cartForm").submit();
 	}
 </script>
-<!-- 场次预定样式 -->
-<link href="${pageContext.request.contextPath}/css/book.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+body{
+	background:url("${pageContext.request.contextPath}/image/background.jpg");
+}
+</style>
+
 </head>
 <body>
 
@@ -21,7 +25,7 @@
 	<div class="span5">
 		<div class="logo">
 			<a>
-				<img src="${pageContext.request.contextPath}/image/r___________renleipic_01/logo.gif" alt="我的商城">
+				<img src="${pageContext.request.contextPath}/someEffects/welfare-disc-spinning/images/blueguy.gif" alt="趣味商城">
 			</a>
 		</div>
 	</div>
@@ -82,22 +86,30 @@
 						</dd>
 					</dl>
 			</div>
-			<form id="cartForm" action="${ pageContext.request.contextPath }/cart_addCart.action" method="post" >
+						<form id="cartForm" action="${ pageContext.request.contextPath }/cart_addCart.action" method="post" >
 				<input type="hidden" name="pid" value="<s:property value="model.pid"/>"/>
 				<div class="action">
-							<input id="count" name="count" value="1" maxlength="4" onpaste="return false;" type="hidden"/>
+						<dl class="quantity">
+							<dt>购买数量:</dt>
+							<dd>
+								<input id="count" name="count" value="1" maxlength="4" onpaste="return false;" type="text"/>
+							</dd>
+							<dd>
+								件
+							</dd>
+						</dl>
+						
 					<div class="buy">
 							<input id="addCart" class="addCart" value="加入购物车" type="button" onclick="saveCart()"/>
 					</div>
 				</div>
 			</form>
-			<button>location</button>
-			<h1><p>此处应可调用百度地图API来查看场馆所处的真实地点</p></h1>
 			<div id="bar" class="bar">
 				<ul>
 						<li id="introductionTab">
-							<a href="#introduction">场次详情</a>
+							<a href="#introduction">商品介绍</a>
 						</li>
+						
 				</ul>
 			</div>
 				
@@ -106,53 +118,15 @@
 						<strong><s:property value="model.pdesc"/></strong>
 					</div>
 					<div>
-						<img src="${pageContext.request.contextPath }/<s:property value="model.image"/>">
+						<img src="${pageContext.request.contextPath }/<s:property value="model.image"/>" />
 					</div>
 				</div>
-				<div class="book"><!-- 场次 -->
-					<ul>
-                                                    <li class="borderBottom1px">
-                                <div class="date">04月01日</div>
-                                <div class="weekday">
-                                                                            （今天）
-                                                                    </div>
-                                                                    <a class="booking disable" href="javascript:void(0);">预订</a>
-                                                            </li>
-                                                    <li class="borderBottom1px">
-                                <div class="date">04月02日</div>
-                                <div class="weekday">
-                                    （周日）                                </div>
-                                                                    <a class="booking disable" href="javascript:void(0);">预订</a>
-                                                            </li>
-                                                    <li class="borderBottom1px">
-                                <div class="date">04月03日</div>
-                                <div class="weekday">
-                                    （周一）                                </div>
-                                                                    <a class="booking disable" href="javascript:void(0);">预订</a>
-                                                            </li>
-                                                    <li class="borderBottom1px">
-                                <div class="date">04月04日</div>
-                                <div class="weekday">
-                                    （周二）                                </div>
-                                                                    <a class="booking disable" href="javascript:void(0);">预订</a>
-                                                            </li>
-                                                    <li class="borderBottom1px">
-                                <div class="date">04月05日</div>
-                                <div class="weekday">
-                                    （周三）                                </div>
-                                                                    <a class="booking disable" href="javascript:void(0);">预订</a>
-                                                            </li>
-                                    </ul>
-				</div>
-				
-				
 				
 		</div>
 	</div>
 <div class="container footer">
-
-	<div class="span24">
-		<div class="copyright">All Rights Reserved  2017 MyHaiyinSport</div>
+	<div class="span24" style="position:absolute">
+		<div class="copyright">All Rights Reserved  2017 MyInterestingShopMall</div>
 	</div>
 </div>
 </body>

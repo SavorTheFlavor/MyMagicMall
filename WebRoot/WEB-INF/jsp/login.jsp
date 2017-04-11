@@ -12,6 +12,11 @@
 <link href="${pageContext.request.contextPath}/css/login.css" rel="stylesheet" type="text/css"/>
 
 
+<style type="text/css">
+body{
+	background:url("${pageContext.request.contextPath}/image/background.jpg");
+}
+</style>
 </head>
 <body>
 
@@ -94,7 +99,7 @@
 	</div>
 	
 	<div class="span24">
-		<div class="copyright">All Rights Reserved  2017 MyHaiyinSport</div>
+		<div class="copyright">All Rights Reserved  2017 MyInterestingShopMall</div>
 	</div>
 </div>
 </body></html>

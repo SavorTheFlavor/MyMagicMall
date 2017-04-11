@@ -30,7 +30,7 @@ body {
 	_width: 100%;
 	_height: 100%;
 	font: 12px tahoma, Arial, Verdana, sans-serif;
-	color: #666666;
+	color: #03A9F4;
 	background-color: rgba(112, 170, 57,0.7);
 	_background-image: url(about: blank);
 	_background-attachment: fixed;
@@ -38,7 +38,7 @@ body {
 }
 
 a {
-	color: #666666;
+	color: #F44336;
 	text-decoration: none;
 	font-size: 14px;
 }

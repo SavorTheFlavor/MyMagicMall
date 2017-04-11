@@ -10,23 +10,26 @@
 
 <link href="${pageContext.request.contextPath}/css/common.css" rel="stylesheet" type="text/css"/>
 <link href="${pageContext.request.contextPath}/css/cart.css" rel="stylesheet" type="text/css"/>
-
+<style type="text/css">
+body{
+	background:url("${pageContext.request.contextPath}/image/background.jpg");
+}
+.copyright{
+	margin:35% 0 0 50%;
+}
+</style>
 
 </head>
 <body>
 <div class="container header">
 	<div class="span5">
 		<div class="logo">
-			<a href="http://localhost:8080/mango/">
-				<img src="${pageContext.request.contextPath}/image/r___________renleipic_01/logo.gif" alt="传智播客">
+			<a>
+				<img src="${pageContext.request.contextPath}/someEffects/welfare-disc-spinning/images/W5P555VCFWH]TY0U{$AD9XW.gif" alt="趣味商城" />
 			</a>
 		</div>
 	</div>
-	<div class="span9">
-<div class="headerAd">
-					<img src="${pageContext.request.contextPath}/image/header.jpg" width="320" height="50" alt="正品保障" title="正品保障">
-</div>	</div>
-	
+
 	<%@ include file="menu.jsp" %>
 	
 </div>	<div class="container cart">
@@ -94,14 +97,9 @@
 			</div>
 		</s:else>
 	</div>
-<div class="container footer">
-	<div class="span24">
-		<div class="footerAd">
-					<img src="${pageContext.request.contextPath}/image/footer.jpg" width="950" height="52" alt="我们的优势" title="我们的优势">
-</div>	</div>
 	
 	<div class="span24">
-		<div class="copyright">All Rights Reserved  2017 MyHaiyinSport</div>
+		<div class="copyright">All Rights Reserved  2017 MyInterestingShopMall</div>
 	</div>
 </div>
 </body></html>

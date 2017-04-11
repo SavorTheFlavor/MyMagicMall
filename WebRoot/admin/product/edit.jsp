@@ -34,7 +34,7 @@
 						是否全新：
 					</td>
 					<td class="ta_01" bgColor="#ffffff">
-						
+						<!-- 这里报错的话不用管 -->
 						<select name="is_hot">
 							<option value="1" <s:if test="model.is_hot==1">selected</s:if> >是</option>
 							<option value="0" <s:if test="model.is_hot==0">selected</s:if>>否</option>
