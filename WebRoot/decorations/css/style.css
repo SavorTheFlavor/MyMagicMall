@@ -15,10 +15,12 @@ body {
 	}
 
 a {
+	font-size:15px;
 	text-decoration: none !important;
-	color: #333;
+	color: rgba(114, 137, 255,0.7);;
 	}
 a:focus {
+	font-size:20px;
 	outline: 0px;
 	}
 

@@ -1,12 +1,10 @@
 package com.me.shop.action;
 
 import java.io.IOException;
-import java.util.Map;
 
-import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.ServletActionContext;
-import org.apache.struts2.interceptor.SessionAware;
 
 import com.me.shop.service.UserService;
 import com.me.shop.vo.User;
@@ -43,10 +41,30 @@ public class GameAction extends ActionSupport{
 		}
 		return "2048";
 	}
-	
-	public String accountFor2048(){
-		this.addActionMessage("sad");
-		return null;
+
+
+	/**
+	 * 计算2048游戏得分，并增加用户积分
+	 * @return
+	 * @throws IOException 
+	 */
+	public String accountFor2048() throws IOException{
+		//接收参数
+		int gPoints = Integer.parseInt(ServletActionContext.getRequest().getParameter("gPoints"));
+		
+		//将积分保存到用户中
+			existUser = (User) ServletActionContext.getRequest().getSession().getAttribute("existUser");
+			if(existUser == null){
+				return "login";
+			}
+		  existUser.setPoints(existUser.getPoints()+gPoints/10);
+		 userService.update(existUser);
+		System.out.println(gPoints+">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+		 //向页面返回数据
+		ServletActionContext.getResponse().getWriter().write(""+gPoints/10);
+		ServletActionContext.getResponse().getWriter().close();//要记得close！！！！不然返回整个页面！！！！
+		
+		return "2048";
 	}
 
 	/**抽奖

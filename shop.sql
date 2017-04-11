@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50520
 File Encoding         : 65001
 
-Date: 2017-04-11 13:23:54
+Date: 2017-04-11 22:49:19
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -119,11 +119,12 @@ CREATE TABLE `orderitem` (
   KEY `FKE8B2AB6140ACF87A` (`oid`),
   CONSTRAINT `FKE8B2AB6140ACF87A` FOREIGN KEY (`oid`) REFERENCES `orders` (`oid`),
   CONSTRAINT `FKE8B2AB6171DB7AE4` FOREIGN KEY (`pid`) REFERENCES `product` (`pid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of orderitem
 -- ----------------------------
+INSERT INTO `orderitem` VALUES ('1', '1', '0.01', '82', '1');
 
 -- ----------------------------
 -- Table structure for orders
@@ -141,11 +142,13 @@ CREATE TABLE `orders` (
   PRIMARY KEY (`oid`),
   KEY `FKC3DF62E5AA3D9C7` (`uid`),
   CONSTRAINT `FKC3DF62E5AA3D9C7` FOREIGN KEY (`uid`) REFERENCES `user` (`uid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of orders
 -- ----------------------------
+INSERT INTO `orders` VALUES ('1', '0.009999999999990905', '2017-04-11 18:14:13', '1', null, null, null, '7');
+INSERT INTO `orders` VALUES ('2', '0', '2017-04-11 18:15:09', '1', null, null, null, '7');
 
 -- ----------------------------
 -- Table structure for product
@@ -202,6 +205,6 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('7', 'aaa', 'aaa', '沈晶秉', 'aaa@shop.com', '15726607618', '南极', '1', null, '1041.000000', '13', '77119');
+INSERT INTO `user` VALUES ('7', 'aaa', 'aaa', '沈晶秉', 'aaa@shop.com', '15726607618', '南极', '1', null, '343.000000', '13', '77963');
 INSERT INTO `user` VALUES ('8', 'bbb', 'bbb', '沃姚库', 'bbb@shop.com', '18726607618', '月球', '1', '', '111.000000', '1', '0');
 SET FOREIGN_KEY_CHECKS=1;

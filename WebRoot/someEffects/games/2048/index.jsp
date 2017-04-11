@@ -19,17 +19,30 @@
 	body {
 		background:url("../welfare-disc-spinning/images/background.jpg");
 	}
+	.user_info{
+		position: absolute;
+		margin: 9px -4px 0 70%;
+		color:pink;
+	}
+
 </style>
 
 </head>
 <body>
 
 <div class="header">
+	<div><s:actionmessage/></div>
     <h1>2048</h1>
     <a href="javascript:newgame();" id="newgamebutton"  onclick="newgame()">重新开始</a>
     <p>得分:<span id="score">0</span></p>
-    <s:actionmessage/>
+    
 </div>
+
+<div class="user_info">
+		<div id="coupon">优惠券：<s:property value="#session.existUser.coupon"/>张</div>
+		<div id="points">积分：<s:property value="#session.existUser.points"/></div>
+		<div id="balance">钱：<s:property value="#session.existUser.balance"/>元</div>
+	</div>
 
 <div id="grid-container">
     <div class="grid-cell" id="grid-cell-0-0"></div>

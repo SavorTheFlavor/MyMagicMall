@@ -21,10 +21,10 @@ body{
 <body>
 
 <div class="container header">
-	<div class="span5">
+		<div class="span5">
 		<div class="logo">
-			<a href="http://localhost:8080/mango/">
-				<img src="${pageContext.request.contextPath}/image/r___________renleipic_01/logo.gif" alt="我的商城">
+			<a>
+				<img src="${pageContext.request.contextPath}/someEffects/welfare-disc-spinning/images/blueguy.gif" alt="趣味商城" />
 			</a>
 		</div>
 	</div>
@@ -32,10 +32,7 @@ body{
 	<%@ include file="menu.jsp" %>
 	
 </div>	<div class="container login">
-		<div class="span12">
-<div class="ad">
-					<img src="${pageContext.request.contextPath}/image/login.jpg" width="500" height="330" alt="会员登录" title="会员登录">
-</div>		</div>
+
 		<div class="span12 last">
 			<div class="wrap">
 				<div class="main">
@@ -94,9 +91,6 @@ body{
 		</div>
 	</div>
 <div class="container footer">
-	<div class="span24">
-	  <div class="footerAd"><img src="${pageContext.request.contextPath}/image/footer.jpg" width="950" height="52" alt="我们的优势" title="我们的优势" /></div>	
-	</div>
 	
 	<div class="span24">
 		<div class="copyright">All Rights Reserved  2017 MyInterestingShopMall</div>

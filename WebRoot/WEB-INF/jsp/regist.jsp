@@ -88,8 +88,8 @@ body{
 <div class="container header">
 	<div class="span5">
 		<div class="logo">
-			<a href="http://localhost:8080/mango/">
-				<img src="${pageContext.request.contextPath}/image/r___________renleipic_01/logo.gif" alt="传智播客">
+			<a>
+				<img src="${pageContext.request.contextPath}/someEffects/welfare-disc-spinning/images/blueguy.gif" alt="趣味商城" />
 			</a>
 		</div>
 	</div>
@@ -224,10 +224,6 @@ body{
 		</div>
 	</div>
 <div class="container footer">
-	<div class="span24">
-		<div class="footerAd">
-					<img src="${pageContext.request.contextPath}/image/footer.jpg" width="950" height="52" alt="我们的优势" title="我们的优势">
-</div>	</div>
 	<div class="span24">
 		<div class="copyright">All Rights Reserved  2017 MyInterestingShopMall</div>
 	</div>

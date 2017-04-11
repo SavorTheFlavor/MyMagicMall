@@ -5,24 +5,24 @@
 		<ul>
 			<s:if test="#session.existUser == null">
 			<li id="headerLogin" class="headerLogin" style="display: list-item;">
-				<a href="${ pageContext.request.contextPath }/user_loginPage.action">登录</a>|</li>
+				<a href="${ pageContext.request.contextPath }/user_loginPage.action">登录</a></li>
 			<li id="headerRegister" class="headerRegister"
-				style="display: list-item;"><a href="${ pageContext.request.contextPath }/user_registPage.action">注册</a>|
+				style="display: list-item;"><a href="${ pageContext.request.contextPath }/user_registPage.action">注册</a>
 			</li>
 			</s:if>
 			<s:else>
 			<li id="headerLogin" class="headerLogin" style="display: list-item;">
 				<s:property value="#session.existUser.name"/>
 				余额:<s:property value="#session.existUser.balance"/>
-				|</li>
+				</li>
 			<li id="headerLogin" class="headerLogin" style="display: list-item;">
-				<a href="${ pageContext.request.contextPath }/order_findByUid.action?page=1">我的订单</a>|</li>
+				<a href="${ pageContext.request.contextPath }/order_findByUid.action?page=1">我的订单</a></li>
 			<li id="headerRegister" class="headerRegister"
-				style="display: list-item;"><a href="${ pageContext.request.contextPath }/user_quit.action">退出</a>|
+				style="display: list-item;"><a href="${ pageContext.request.contextPath }/user_quit.action">退出</a>
 			</li>
 			</s:else>
 		
-			<li><a href="${ pageContext.request.contextPath }/user_toCharge.action">充值</a>|</li>
+			<li><a href="${ pageContext.request.contextPath }/user_toCharge.action">充值</a></li>
 			<li><a href="${ pageContext.request.contextPath }/someEffects/floatingVapor/exchange.jsp">积分兑换</a></li>
 		</ul>
 	</div>

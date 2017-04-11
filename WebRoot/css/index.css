@@ -320,7 +320,7 @@ div.index .hotProduct .title {
 	float: left;
 	margin-bottom: 10px;
 	/* background: url(../images/index.gif) 0px -150px no-repeat; */
-	background-color: #825996;
+	background-color: rgba(89, 150, 146, 0.67);
 }
 
 div.index .hotProduct .title strong {
@@ -348,7 +348,7 @@ div.index .hotProduct .tab {
 	margin-bottom: 10px;
 	overflow: hidden;
 	/* background: url(../images/index.gif) 0px -210px repeat-x; */
-	background-color: #825996;
+	background-color: rgba(89, 150, 146, 0.67);
 }
 
 div.index .hotProduct .tab li {
@@ -366,7 +366,7 @@ div.index .hotProduct .tab li {
 
 div.index .hotProduct .tab li.current {
 	font-weight: bold;
-	background-color: #825996;
+	background-color: rgba(89, 150, 146, 0.67);
 }
 
 div.index .hotProduct .hotProductAd {

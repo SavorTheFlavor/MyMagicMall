@@ -8,7 +8,6 @@ var endx=0;
 var endy=0;
 
 $(document).ready(function () {
-
    prepareForMobile();
     newgame();
 });
@@ -59,6 +58,7 @@ function init(){
     updateBoardView();
 
     score=0;
+
 }
 
 function updateBoardView(){
@@ -228,12 +228,17 @@ function isgameover(){
 }
 
 function gameover(){
-    alert("Gameover!");
-    $.ajax({
+
+	$.ajax({
 		  type: "post",
+		  data:{"gPoints":score},
 		  dataType: "text",//返回的类型！！！！
 		  url: "${pageContext.request.contextPath}/game_accountFor2048.action",
-		  async:false//改为同步请求..
+		  async:false,//改为同步请求..
+		  success:
+			  function(points){
+			  	alert("Game Over!\n 你从游戏中获得了"+points+"点积分");
+		  }
 		});
 }
 
