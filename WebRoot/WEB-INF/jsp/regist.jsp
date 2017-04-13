@@ -89,7 +89,7 @@ body{
 	<div class="span5">
 		<div class="logo">
 			<a>
-				<img src="${pageContext.request.contextPath}/someEffects/welfare-disc-spinning/images/blueguy.gif" alt="趣味商城" />
+				<img src="${pageContext.request.contextPath}/someEffects/welfare-disc-spinning/images/blueguy.gif" alt="魔幻商城" />
 			</a>
 		</div>
 	</div>

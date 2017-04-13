@@ -10,6 +10,12 @@
 <!-- 这是从game.jsp请求转发而跳转过来的，所以 ./ 指的是game.jsp那个目录 -->
 <link rel="stylesheet" type ="text/css" href="./2048/css/style.css" />
 
+
+<!-- sweetAlert!!! -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/tools/sweetalert/js/sweet-alert.min.js"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/tools/sweetalert/css/sweet-alert.css" />
+<!-- .. -->
+
 <script type="text/javascript" src="./2048/js/jquery.min.js"></script>
 <script type="text/javascript" src="./2048/js/support.js"></script>
 <script type="text/javascript" src="./2048/js/show.js"></script>
@@ -26,6 +32,8 @@
 	}
 
 </style>
+
+
 
 </head>
 <body>

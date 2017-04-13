@@ -25,7 +25,7 @@ body{
 	<div class="span5">
 		<div class="logo">
 			<a>
-				<img src="${pageContext.request.contextPath}/someEffects/welfare-disc-spinning/images/blueguy.gif" alt="趣味商城" />
+				<img src="${pageContext.request.contextPath}/someEffects/welfare-disc-spinning/images/blueguy.gif" alt="魔幻商城" />
 			</a>
 		</div>
 	</div>
@@ -99,28 +99,6 @@ body{
 								<br /> 
 							联系方式：<input name="phone" type="text"value="<s:property value="model.user.phone"/>" style="width:150px" />
 
-						</p>
-						<hr />
-						<p>
-							选择银行：<br/>
-							<input type="radio" name="pd_FrpId" value="ICBC-NET-B2C" checked="checked"/>工商银行
-							<img src="${ pageContext.request.contextPath }/bank_img/icbc.bmp" align="middle"/>&nbsp;&nbsp;&nbsp;&nbsp;
-							<input type="radio" name="pd_FrpId" value="BOC-NET-B2C"/>中国银行
-							<img src="${ pageContext.request.contextPath }/bank_img/bc.bmp" align="middle"/>&nbsp;&nbsp;&nbsp;&nbsp;
-							<input type="radio" name="pd_FrpId" value="ABC-NET-B2C"/>农业银行
-							<img src="${ pageContext.request.contextPath }/bank_img/abc.bmp" align="middle"/>
-							<br/>
-							<input type="radio" name="pd_FrpId" value="BOCO-NET-B2C"/>交通银行
-							<img src="${ pageContext.request.contextPath }/bank_img/bcc.bmp" align="middle"/>&nbsp;&nbsp;&nbsp;&nbsp;
-							<input type="radio" name="pd_FrpId" value="PINGANBANK-NET"/>平安银行
-							<img src="${ pageContext.request.contextPath }/bank_img/pingan.bmp" align="middle"/>&nbsp;&nbsp;&nbsp;&nbsp;
-							<input type="radio" name="pd_FrpId" value="CCB-NET-B2C"/>建设银行
-							<img src="${ pageContext.request.contextPath }/bank_img/ccb.bmp" align="middle"/>
-							<br/>
-							<input type="radio" name="pd_FrpId" value="CEB-NET-B2C"/>光大银行
-							<img src="${ pageContext.request.contextPath }/bank_img/guangda.bmp" align="middle"/>&nbsp;&nbsp;&nbsp;&nbsp;
-							<input type="radio" name="pd_FrpId" value="CMBCHINA-NET-B2C"/>招商银行
-							<img src="${ pageContext.request.contextPath }/bank_img/cmb.bmp" align="middle"/>
 						</p>
 						<hr />
 						<p style="text-align:right">

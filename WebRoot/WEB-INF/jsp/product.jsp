@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-<title>趣味商城</title>
+<title>魔幻商城</title>
 <link href="${pageContext.request.contextPath}/css/common.css" rel="stylesheet" type="text/css"/>
 <link href="${pageContext.request.contextPath}/css/product.css" rel="stylesheet" type="text/css"/>
 <script>
@@ -25,7 +25,7 @@ body{
 	<div class="span5">
 		<div class="logo">
 			<a>
-				<img src="${pageContext.request.contextPath}/someEffects/welfare-disc-spinning/images/blueguy.gif" alt="趣味商城">
+				<img src="${pageContext.request.contextPath}/someEffects/welfare-disc-spinning/images/blueguy.gif" alt="魔幻商城">
 			</a>
 		</div>
 	</div>

@@ -24,7 +24,7 @@ body{
 		<div class="span5">
 		<div class="logo">
 			<a>
-				<img src="${pageContext.request.contextPath}/someEffects/welfare-disc-spinning/images/blueguy.gif" alt="趣味商城" />
+				<img src="${pageContext.request.contextPath}/someEffects/welfare-disc-spinning/images/blueguy.gif" alt="魔幻商城" />
 			</a>
 		</div>
 	</div>
@@ -78,7 +78,7 @@ body{
 									<dl>
 										<dt>还没有注册账号？</dt>
 										<dd>
-											立即注册即可体验在线购物！
+											立即注册即可体验魔幻商城！
 											<a href="${ pageContext.request.contextPath }/user_registPage.action">立即注册</a>
 										</dd>
 									</dl>

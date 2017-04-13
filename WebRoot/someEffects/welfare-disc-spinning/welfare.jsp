@@ -8,6 +8,11 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <title>福利大转盘！！！！</title>
 
+<!-- sweetAlert!!! -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/tools/sweetalert/js/sweet-alert.min.js"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/tools/sweetalert/css/sweet-alert.css" />
+<!-- .. -->
+
 <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
 <script type="text/javascript" src="js/jQueryRotate.2.2.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
@@ -90,11 +95,11 @@ $(function(){
 					  success:
 						  function(msg){
 							  if(msg == "Non-existent"){
-								  alert("请登录~！");
+								  sweetAlert("请登录~！");
 								  return;
 							  }
 							  if(msg == "notEnough"){
-								  alert("优惠券不够了呢...");
+								  sweetAlert("优惠券不够了呢...");
 								  isEnough = false;
 								  return;
 							  }
@@ -110,7 +115,7 @@ $(function(){
 		            			animateTo:1440+a.angle,      //结束的角度
 								easing: $.easing.easeOutSine,//动画效果，需加载jquery.easing.min.js
 								callback: function(){
-									alert(a.prize+a.message);//简单的弹出获奖信息
+									sweetAlert(a.prize+a.message);//简单的弹出获奖信息
 								}
 						 });
 					}

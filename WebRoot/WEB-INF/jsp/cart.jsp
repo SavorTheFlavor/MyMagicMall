@@ -25,7 +25,7 @@ body{
 	<div class="span5">
 		<div class="logo">
 			<a>
-				<img src="${pageContext.request.contextPath}/someEffects/welfare-disc-spinning/images/W5P555VCFWH]TY0U{$AD9XW.gif" alt="趣味商城" />
+				<img src="${pageContext.request.contextPath}/someEffects/welfare-disc-spinning/images/W5P555VCFWH]TY0U{$AD9XW.gif" alt="魔幻商城" />
 			</a>
 		</div>
 	</div>

@@ -237,7 +237,7 @@ function gameover(){
 		  async:false,//改为同步请求..
 		  success:
 			  function(points){
-			  	alert("Game Over!\n 你从游戏中获得了"+points+"点积分");
+			  	sweetAlert("Game Over!\n 你从游戏中获得了"+points+"点积分");
 		  }
 		});
 }
