@@ -137,8 +137,8 @@ public class OrderAction extends ActionSupport implements ModelDriven<Order> {
 		double restMoney = existUser.getBalance() - payment;
 		if(restMoney < 0){
 			String json="{\"msg\":钱不够啊！}";
-			ServletActionContext.getResponse().getWriter().write(json);
-			ServletActionContext.getResponse().getWriter().close();//要记得close！！！！不然返回整个页面！！！！
+			ServletActionContext.getRequest().setAttribute("msg", json);
+			ServletActionContext.getResponse().getWriter().print(json);
 			return "orderPage";//钱不够跳转回原来的order.jsp
 		}
 		existUser.setBalance(restMoney);

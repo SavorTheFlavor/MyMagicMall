@@ -213,7 +213,7 @@ body{
 							<dl>
 								<dt>已经拥有账号了？</dt>
 								<dd>
-									立即登录即可体验在线购物！
+									立即登录即可体验魔幻商城！
 									<a href="${pageContext.request.contextPath}/user_loginPage.action">立即登录</a>
 								</dd>
 							</dl>

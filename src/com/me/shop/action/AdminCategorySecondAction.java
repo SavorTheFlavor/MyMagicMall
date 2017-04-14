@@ -32,6 +32,10 @@ public class AdminCategorySecondAction extends ActionSupport implements
 		this.page = page;
 	}
 
+	public void setCategorySecond(CategorySecond categorySecond) {
+		this.categorySecond = categorySecond;
+	}
+
 	public void setCategorySecondService(
 			CategorySecondService categorySecondService) {
 		this.categorySecondService = categorySecondService;

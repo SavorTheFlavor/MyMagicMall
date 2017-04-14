@@ -21,13 +21,12 @@ public class ProductAction extends ActionSupport implements
 	private ProductService productService;
 	// 接收分类cid
 	private Integer cid;
+	
 	// 接收二级分类id
 	private Integer csid;
-
 	public Integer getCsid() {
 		return csid;
 	}
-
 	public void setCsid(Integer csid) {
 		this.csid = csid;
 	}

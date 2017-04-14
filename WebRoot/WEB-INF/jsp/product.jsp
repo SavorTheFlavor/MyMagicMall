@@ -124,10 +124,5 @@ body{
 				
 		</div>
 	</div>
-<div class="container footer">
-	<div class="span24" style="position:absolute">
-		<div class="copyright">All Rights Reserved  2017 MyInterestingShopMall</div>
-	</div>
-</div>
 </body>
 </html>

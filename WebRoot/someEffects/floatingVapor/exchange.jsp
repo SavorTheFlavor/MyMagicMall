@@ -30,6 +30,9 @@ p{color:rgb(72,121,76);font-size:23px;}
 	color:pink;
 	
 }
+#wrapper{
+	margin: 0 0 0 10%;
+}
 </style>
 
 </head>

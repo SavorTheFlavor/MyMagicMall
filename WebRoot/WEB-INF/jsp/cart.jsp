@@ -98,8 +98,4 @@ body{
 		</s:else>
 	</div>
 	
-	<div class="span24">
-		<div class="copyright">All Rights Reserved  2017 MyInterestingShopMall</div>
-	</div>
-</div>
 </body></html>
