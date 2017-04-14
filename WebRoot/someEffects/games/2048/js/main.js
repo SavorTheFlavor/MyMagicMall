@@ -232,12 +232,13 @@ function gameover(){
 	$.ajax({
 		  type: "post",
 		  data:{"gPoints":score},
-		  dataType: "text",//返回的类型！！！！
+		  dataType: "json",//返回的类型！！！！
 		  url: "${pageContext.request.contextPath}/game_accountFor2048.action",
 		  async:false,//改为同步请求..
 		  success:
-			  function(points){
-			  	sweetAlert("Game Over!\n 你从游戏中获得了"+points+"点积分");
+			  function(p){
+			  	sweetAlert("Game Over!\n 你从游戏中获得了"+p.points+"点积分");
+			  	$("#points").text('积分 :'+p.uPoints);
 		  }
 		});
 }

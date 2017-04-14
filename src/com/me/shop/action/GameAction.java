@@ -59,34 +59,46 @@ public class GameAction extends ActionSupport{
 			}
 		  existUser.setPoints(existUser.getPoints()+gPoints/10);
 		 userService.update(existUser);
-		System.out.println(gPoints+">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+		 
+		 //使用Json向ajax请求返回数据
+		 String json="{\"points\":"+gPoints/10+",\"uPoints\":"+existUser.getPoints()+"}"; 
+		 
 		 //向页面返回数据
-		ServletActionContext.getResponse().getWriter().write(""+gPoints/10);
+		ServletActionContext.getResponse().getWriter().write(json);
 		ServletActionContext.getResponse().getWriter().close();//要记得close！！！！不然返回整个页面！！！！
 		
 		return "2048";
 	}
 
-	/**抽奖
+	/**抽奖!!!!!!!!!
 	 * @throws IOException */
 	public String luckDraw() throws IOException{
 		existUser = (User) ServletActionContext.getRequest().getSession().getAttribute("existUser");
+		StringBuffer json = new StringBuffer("{\"coupon\":"+existUser.getCoupon()+
+				",\"balance\":"+existUser.getBalance()+
+				",\"points\":"+existUser.getPoints()+
+				",");
 		if(existUser == null){
-			String msg = "Non-existent";
-			ServletActionContext.getResponse().getWriter().print(msg);
+			String msg = "Non-existent";	
+			json.append("\"msg\":\""+msg+"\"}");//记得json串里的字符串的值一定要记得加双引号！
+			ServletActionContext.getResponse().getWriter().write(json.toString());
 			ServletActionContext.getResponse().getWriter().close();//要记得close！！！！不然返回整个页面！！！！
 			return "rotatePage";
 		}
 		int restCoupon = existUser.getCoupon();
 		if(restCoupon <= 0){
 			String msg = "notEnough";
-			ServletActionContext.getResponse().getWriter().print(msg);
+			json.append("\"msg\":\""+msg+"\"}");
+			ServletActionContext.getResponse().getWriter().write(json.toString());
 			ServletActionContext.getResponse().getWriter().close();//要记得close！！！！不然返回整个页面！！！！
 			return "rotatePage";
 		}
 		restCoupon--;
 		existUser.setCoupon(restCoupon);
 		userService.update(existUser);
+		json.append("\"msg\":\"2333\"}");
+		ServletActionContext.getResponse().getWriter().write(json.toString());
+		ServletActionContext.getResponse().getWriter().close();//要记得close！！！！不然返回整个页面！！！！
 		return "rotatePage";
 	}
 	
@@ -139,6 +151,7 @@ public class GameAction extends ActionSupport{
 		existUser.setPoints(restPoints);
 		existUser.setCoupon(existUser.getCoupon()+coupon);
 		userService.update(existUser);
+		
 		return "exchangePage";
 	}
 

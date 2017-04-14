@@ -89,22 +89,25 @@ $(function(){
 				var isEnough = true;
 				$.ajax({
 					  type: "post",
-					  dataType: "text",//返回的类型！！！！
+					  dataType: "json",//返回的类型！！！！
 					  url: "${pageContext.request.contextPath}/game_luckDraw.action",
 					  async:false,//改为同步请求..
 					  success:
-						  function(msg){
-							  if(msg == "Non-existent"){
+						  function(data){
+						  	  sweetAlert("waea"+data.msg);
+							  if(data.msg == "Non-existent"){
 								  sweetAlert("请登录~！");
 								  return;
 							  }
-							  if(msg == "notEnough"){
+							  if(data.msg == "notEnough"){
 								  sweetAlert("优惠券不够了呢...");
 								  isEnough = false;
 								  return;
 							  }
-							  $("#coupon").innerHTML='<s:property value="#session.existUser.coupon"/>';
-							  $("#balance").innerHTML='<s:property value="#session.existUser.balance"/>';
+							  
+							  $("#coupon").text('优惠券：'+data.coupon+'张');
+							  $("#balance").text('钱：'+data.balance+'元');
+							  $("#points").text('积分：'+data.points);
 					  }
 					});
 					if(isEnough){

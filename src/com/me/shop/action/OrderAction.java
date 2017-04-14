@@ -3,11 +3,13 @@ package com.me.shop.action;
 import java.io.IOException;
 import java.util.Date;
 
+import javax.print.attribute.standard.Severity;
+
 import org.apache.struts2.ServletActionContext;
 
 import com.me.shop.service.OrderService;
+import com.me.shop.service.UserService;
 import com.me.shop.utils.PageBean;
-import com.me.shop.utils.PaymentUtil;
 import com.me.shop.vo.Cart;
 import com.me.shop.vo.CartItem;
 import com.me.shop.vo.Order;
@@ -30,22 +32,11 @@ public class OrderAction extends ActionSupport implements ModelDriven<Order> {
 		return order;
 	}
 
-	// 接收支付通道编码:
-	private String pd_FrpId;
-
-	public void setPd_FrpId(String pd_FrpId) {
-		this.pd_FrpId = pd_FrpId;
-	}
-	// 接收付款成功后的参数:
-	private String r3_Amt;
-	private String r6_Order;
 	
-	public void setR3_Amt(String r3_Amt) {
-		this.r3_Amt = r3_Amt;
-	}
-
-	public void setR6_Order(String r6_Order) {
-		this.r6_Order = r6_Order;
+	//注入UserService，提供set方法，让spring自动在ioc容器中查找该对象并注入
+	private UserService userService;
+	public void setUserService(UserService userService) {
+		this.userService = userService;
 	}
 
 	// 接收page
@@ -145,22 +136,20 @@ public class OrderAction extends ActionSupport implements ModelDriven<Order> {
 				.getAttribute("existUser");
 		double restMoney = existUser.getBalance() - payment;
 		if(restMoney < 0){
-			
+			String json="{\"msg\":钱不够啊！}";
+			ServletActionContext.getResponse().getWriter().write(json);
+			ServletActionContext.getResponse().getWriter().close();//要记得close！！！！不然返回整个页面！！！！
+			return "orderPage";//钱不够跳转回原来的order.jsp
 		}
-		return NONE;
-	}
-
-	// 付款成功后跳转回来的路径:
-	public String callBack(){
-		// 修改订单的状态:
-		Order currOrder = orderService.findByOid(Integer.parseInt(r6_Order));
+		existUser.setBalance(restMoney);
+		userService.update(existUser);
+		
 		// 修改订单状态为2:已经付款:
 		currOrder.setState(2);
 		orderService.update(currOrder);
-		this.addActionMessage("支付成功!订单编号为: "+r6_Order +" 付款金额为: "+r3_Amt);
+		this.addActionMessage("支付成功!订单编号为: "+currOrder.getOid()+" 付款金额为: "+currOrder.getTotal());
 		return "msg";
 	}
-	
 	// 修改订单的状态:
 	public String updateState(){
 		Order currOrder = orderService.findByOid(order.getOid());

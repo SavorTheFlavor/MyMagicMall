@@ -18,6 +18,14 @@ body{
 	margin:35% 0 0 50%;
 }
 </style>
+
+<!-- sweetAlert!!! -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/tools/sweetalert/js/sweet-alert.min.js"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/tools/sweetalert/css/sweet-alert.css" />
+<!-- .. -->
+
+<script type="text/javascript" src="${pageContext.request.contextPath}/someEffects/welfare-disc-spinning/js/jquery-1.8.0.min.js"></script>
+
 </head>
 <body>
 
@@ -115,6 +123,25 @@ body{
 	<div class="span24">
 		<div class="copyright">All Rights Reserved  2017 MyInterestingShopMall</div>
 	</div>
-</div>
+	<script type="text/javascript">
+	//为orderForm表单绑定一个自定义的提交事件
+	var form = $("#orderForm");
+     var action = form.attr("action");
+    form.on("submit",function(){
+    
+    	$.ajax({
+		  type: "post",
+		  data:form.serialize(),
+		  dataType: "json",//返回的类型！！！！
+		  url: action,
+		  async:false,//改为同步请求..
+		  success:
+			  function(res){
+			  	sweetAlert(res.msg);
+		  }
+		});
+        return false;//阻止原本的提交事件
+    });
+	</script>
 </body>
 </html>
