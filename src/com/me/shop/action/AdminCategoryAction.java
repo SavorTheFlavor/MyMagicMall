@@ -26,12 +26,6 @@ public class AdminCategoryAction extends ActionSupport implements ModelDriven<Ca
 	}
 
 	
-	//由于模型驱动无法接收对象？所有只好自己另设参数接收，并手动注入....
-		private Integer theCategory;
-		public void setTheCategory(Integer theCategory) {
-			this.theCategory = theCategory;
-		}
-
 
 	// 查询所有一级分类
 	public String findAll(){
@@ -72,8 +66,7 @@ public class AdminCategoryAction extends ActionSupport implements ModelDriven<Ca
 	// 修改一级分类的方法:
 	public String update(){
 		// 使用模型驱动接收前台提交数据:
-		Category tCid = categoryService.findByCid(theCategory);
-		categoryService.update(tCid);
+		categoryService.update(category);
 		// 页面跳转:
 		return "updateSuccess";
 	}

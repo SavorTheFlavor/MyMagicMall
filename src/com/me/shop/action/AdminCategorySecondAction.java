@@ -61,7 +61,7 @@ public class AdminCategorySecondAction extends ActionSupport implements
 		return "findAll";
 	}
 
-	// 跳转到天津页面的方法:
+	// 跳转到添加页面的方法:
 	public String addPage() {
 		// 查询所有一级分类.
 		List<Category> cList = categoryService.findAll();
@@ -96,8 +96,15 @@ public class AdminCategorySecondAction extends ActionSupport implements
 		return "editSuccess";
 	}
 	
+	//由于模型驱动无法接收对象？所有只好自己另设参数接收，并手动注入....
+	private Integer theCategory;
+	public void setTheCategory(Integer theCategory) {
+		this.theCategory = theCategory;
+	}
 	// 修改二级分类的方法:
 	public String update(){
+		Category category = categoryService.findByCid(theCategory);
+		categorySecond.setCategory(category);
 		categorySecondService.update(categorySecond);
 		return "updateSuccess";
 	}

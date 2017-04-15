@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50520
 File Encoding         : 65001
 
-Date: 2017-04-14 23:26:33
+Date: 2017-04-16 00:56:53
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -39,7 +39,7 @@ CREATE TABLE `category` (
   `cid` int(11) NOT NULL AUTO_INCREMENT,
   `cname` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`cid`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of category
@@ -64,7 +64,7 @@ CREATE TABLE `categorysecond` (
   PRIMARY KEY (`csid`),
   KEY `FK936FCAF21DB1FD15` (`cid`),
   CONSTRAINT `FK936FCAF21DB1FD15` FOREIGN KEY (`cid`) REFERENCES `category` (`cid`)
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of categorysecond
@@ -102,6 +102,7 @@ INSERT INTO `categorysecond` VALUES ('34', '大背包', '2');
 INSERT INTO `categorysecond` VALUES ('35', '好吃的水果', '1');
 INSERT INTO `categorysecond` VALUES ('36', '花纹裙子', '1');
 INSERT INTO `categorysecond` VALUES ('41', '美丽的东西', '4');
+INSERT INTO `categorysecond` VALUES ('43', '编程入门系列', '6');
 
 -- ----------------------------
 -- Table structure for orderitem
@@ -119,21 +120,16 @@ CREATE TABLE `orderitem` (
   KEY `FKE8B2AB6140ACF87A` (`oid`),
   CONSTRAINT `FKE8B2AB6140ACF87A` FOREIGN KEY (`oid`) REFERENCES `orders` (`oid`),
   CONSTRAINT `FKE8B2AB6171DB7AE4` FOREIGN KEY (`pid`) REFERENCES `product` (`pid`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of orderitem
 -- ----------------------------
-INSERT INTO `orderitem` VALUES ('1', '1', '0.01', '82', '1');
-INSERT INTO `orderitem` VALUES ('2', '1', '228', '1', '3');
-INSERT INTO `orderitem` VALUES ('3', '1', '3333', '84', '4');
-INSERT INTO `orderitem` VALUES ('4', '1', '228', '1', '6');
-INSERT INTO `orderitem` VALUES ('5', '2', '6666', '84', '7');
-INSERT INTO `orderitem` VALUES ('6', '1', '3333', '84', '8');
-INSERT INTO `orderitem` VALUES ('7', '1', '3333', '84', '9');
-INSERT INTO `orderitem` VALUES ('8', '1', '3333', '84', '10');
-INSERT INTO `orderitem` VALUES ('9', '1', '3333', '84', '11');
-INSERT INTO `orderitem` VALUES ('10', '1', '999', '78', '12');
+INSERT INTO `orderitem` VALUES ('24', '1', '3333', '84', '31');
+INSERT INTO `orderitem` VALUES ('25', '1', '228', '2', '32');
+INSERT INTO `orderitem` VALUES ('26', '1', '0.01', '80', '33');
+INSERT INTO `orderitem` VALUES ('27', '1', '122222', '85', '34');
+INSERT INTO `orderitem` VALUES ('28', '1', '2', '77', '35');
 
 -- ----------------------------
 -- Table structure for orders
@@ -151,23 +147,16 @@ CREATE TABLE `orders` (
   PRIMARY KEY (`oid`),
   KEY `FKC3DF62E5AA3D9C7` (`uid`),
   CONSTRAINT `FKC3DF62E5AA3D9C7` FOREIGN KEY (`uid`) REFERENCES `user` (`uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of orders
 -- ----------------------------
-INSERT INTO `orders` VALUES ('1', '0.009999999999990905', '2017-04-11 18:14:13', '1', null, null, null, '7');
-INSERT INTO `orders` VALUES ('2', '0', '2017-04-11 18:15:09', '1', null, null, null, '7');
-INSERT INTO `orders` VALUES ('3', '228', '2017-04-12 21:25:52', '1', '沈晶秉', '15726607618', '南极', '7');
-INSERT INTO `orders` VALUES ('4', '3333', '2017-04-13 22:52:04', '1', '', '', '', '7');
-INSERT INTO `orders` VALUES ('5', '0', '2017-04-13 22:53:08', '1', '沈晶秉', '15726607618', '南极', '7');
-INSERT INTO `orders` VALUES ('6', '228', '2017-04-13 22:53:19', '1', '沈晶秉', '15726607618', '南极', '7');
-INSERT INTO `orders` VALUES ('7', '6666', '2017-04-13 23:37:18', '1', '', '', '', '7');
-INSERT INTO `orders` VALUES ('8', '3333', '2017-04-13 23:39:56', '1', '沈晶秉', '15726607618', '南极', '7');
-INSERT INTO `orders` VALUES ('9', '3333', '2017-04-14 13:42:07', '1', '', '', '', '7');
-INSERT INTO `orders` VALUES ('10', '3333', '2017-04-14 13:42:34', '1', '沈晶秉', '15726607618', '南极', '7');
-INSERT INTO `orders` VALUES ('11', '3333', '2017-04-14 13:43:26', '1', '沈晶秉', '15726607618', '南极', '7');
-INSERT INTO `orders` VALUES ('12', '999', '2017-04-14 18:02:52', '1', '', '', '', '7');
+INSERT INTO `orders` VALUES ('31', '3333', '2017-04-15 13:43:59', '1', null, null, null, '7');
+INSERT INTO `orders` VALUES ('32', '228', '2017-04-15 13:44:12', '2', '沈晶秉', '15726607618', '南极', '7');
+INSERT INTO `orders` VALUES ('33', '0.01', '2017-04-15 13:44:30', '2', '沈晶秉', '15726607618', '南极', '7');
+INSERT INTO `orders` VALUES ('34', '122222', '2017-04-15 13:44:49', '1', null, null, null, '7');
+INSERT INTO `orders` VALUES ('35', '2', '2017-04-15 14:00:00', '3', '沈晶秉', '15726607618', '南极', '7');
 
 -- ----------------------------
 -- Table structure for product
@@ -186,22 +175,23 @@ CREATE TABLE `product` (
   PRIMARY KEY (`pid`),
   KEY `FKED8DCCEFB9B74E02` (`csid`),
   CONSTRAINT `FKED8DCCEFB9B74E02` FOREIGN KEY (`csid`) REFERENCES `categorysecond` (`csid`)
-) ENGINE=InnoDB AUTO_INCREMENT=87 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=88 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of product
 -- ----------------------------
-INSERT INTO `product` VALUES ('1', '日版连衣裙', '558', '228', 'products/14871-kWVIEF.jpg', '双11限量200件，拍完下架，加车享优惠，早下手早发货。。秋冬个性中长款毛衣，美丽和温度同在！限量供应，拒绝撞衫！迫于纱线和人工在不断上涨的双重压力下，产品涨价在即！少量现货出售中，手快有，手慢等哦，赶紧抢哦，绝对高大上。', '1', '2017-04-09 14:30:39', '2');
-INSERT INTO `product` VALUES ('2', '日版连衣裙', '558', '228', 'products/14871-kWVIEF.jpg', '双11限量200件，拍完下架，加车享优惠，早下手早发货。。秋冬个性中长款毛衣，美丽和温度同在！限量供应，拒绝撞衫！迫于纱线和人工在不断上涨的双重压力下，产品涨价在即！少量现货出售中，手快有，手慢等哦，赶紧抢哦，绝对高大上。', '1', '2017-04-09 14:30:39', '2');
-INSERT INTO `product` VALUES ('3', '水果套餐', '238', '2', 'products/0tq2a29-0-lp.jpg', '还没过期....', '0', '2017-04-14 22:59:03', '1');
-INSERT INTO `product` VALUES ('77', '黑色制服', '434', '2', 'products/1297306392-NmFCja.jpg', '黑色..........', '1', '2017-04-09 15:05:41', '1');
-INSERT INTO `product` VALUES ('78', '初音服装', '9999', '999', 'products/14558-XdE065.jpg', '上衣是灰色的，领带是代表色葱绿，袖子是黑色加葱绿条纹，短裙是黑色加葱绿条纹，还有黑色加葱绿条纹的长袜.....', '1', '2017-04-09 15:08:07', '1');
-INSERT INTO `product` VALUES ('79', '葡萄', '2', '1', 'products/1-160r61532135c.jpg', '葡萄', '0', '2017-04-09 15:08:51', '1');
-INSERT INTO `product` VALUES ('80', '旧衣服', '0.1', '0.01', 'products/cs50009.png', '', '0', '2017-04-09 15:10:34', '1');
-INSERT INTO `product` VALUES ('82', '旧衣服', '0.1', '0.01', 'products/cs50009.png', '', '0', '2017-04-14 23:24:08', null);
+INSERT INTO `product` VALUES ('1', '日版连衣裙', '558', '228', 'products/14871-kWVIEF.jpg', '双11限量200件，拍完下架，加车享优惠，早下手早发货。。秋冬个性中长款毛衣，美丽和温度同在！限量供应，拒绝撞衫！迫于纱线和人工在不断上涨的双重压力下，产品涨价在即！少量现货出售中，手快有，手慢等哦，赶紧抢哦，绝对高大上。', '1', '2017-04-15 20:33:23', '36');
+INSERT INTO `product` VALUES ('2', '日版连衣裙', '558', '228', 'products/14871-kWVIEF.jpg', '双11限量200件，拍完下架，加车享优惠，早下手早发货。。秋冬个性中长款毛衣，美丽和温度同在！限量供应，拒绝撞衫！迫于纱线和人工在不断上涨的双重压力下，产品涨价在即！少量现货出售中，手快有，手慢等哦，赶紧抢哦，绝对高大上。', '1', '2017-04-16 00:55:25', '16');
+INSERT INTO `product` VALUES ('3', '水果套餐', '238', '2', 'products/0tq2a29-0-lp.jpg', '还没过期....', '0', '2017-04-15 20:32:22', '33');
+INSERT INTO `product` VALUES ('77', '黑色制服', '434', '2', 'products/1297306392-NmFCja.jpg', '黑色..........', '1', '2017-04-15 20:33:11', '6');
+INSERT INTO `product` VALUES ('78', '初音服装', '9999', '999', 'products/14558-XdE065.jpg', '上衣是灰色的，领带是代表色葱绿，袖子是黑色加葱绿条纹，短裙是黑色加葱绿条纹，还有黑色加葱绿条纹的长袜.....', '1', '2017-04-15 20:33:00', '4');
+INSERT INTO `product` VALUES ('79', '葡萄', '2', '1', 'products/1-160r61532135c.jpg', '葡萄', '0', '2017-04-15 20:32:37', '35');
+INSERT INTO `product` VALUES ('80', '旧衣服', '0.1', '0.01', 'products/cs50009.png', '', '0', '2017-04-15 20:32:04', '2');
+INSERT INTO `product` VALUES ('82', '旧衣服', '0.1', '0.01', 'products/cs50009.png', '', '0', '2017-04-15 20:32:09', '2');
 INSERT INTO `product` VALUES ('84', '蝴蝶', '2222', '3333', 'products/22-140G109201CD.jpg', '蝴蝶在翩跹....', '1', '2017-04-14 22:58:53', '41');
-INSERT INTO `product` VALUES ('85', '冰霜巨龙', '122222', '122222', 'products/frost.jpg', '冰霜巨龙浑身散发着冰冷力量的巨龙一心一意地为它们黑暗的主人服务。冰龙拥有寒冷无比的喷吐武器，可以冻僵空中和地面的敌人。', '1', '2017-04-14 23:10:49', '2');
-INSERT INTO `product` VALUES ('86', '被削弱的冰霜巨龙', '12222', '12222', 'products/frostWeak.jpg', '', '1', '2017-04-14 23:10:44', '3');
+INSERT INTO `product` VALUES ('85', '冰霜巨龙', '122222', '122222', 'products/frost1.jpg', '冰霜巨龙浑身散发着冰冷力量的巨龙一心一意地为它们黑暗的主人服务。冰龙拥有寒冷无比的喷吐武器，可以冻僵空中和地面的敌人。', '1', '2017-04-15 20:31:58', '1');
+INSERT INTO `product` VALUES ('86', '被削弱的冰霜巨龙', '12222', '12222', 'products/frostWeak.jpg', '', '1', '2017-04-15 20:31:54', '1');
+INSERT INTO `product` VALUES ('87', '寂寞的小蘑菇', '111', '11', 'products/mushroom1.jpg', '', '1', '2017-04-15 20:31:32', '41');
 
 -- ----------------------------
 -- Table structure for user
@@ -226,6 +216,6 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('7', 'aaa', 'aaa', '沈晶秉', 'aaa@shop.com', '15726607618', '南极', '1', null, '376.000000', '0', '56367');
+INSERT INTO `user` VALUES ('7', 'aaa', 'aaa', '沈晶秉', 'aaa@shop.com', '15726607618', '南极', '1', null, '161.010000', '3', '14648');
 INSERT INTO `user` VALUES ('8', 'bbb', 'bbb', '沃姚库', 'bbb@shop.com', '18726607618', '月球', '1', '', '111.000000', '1', '0');
 SET FOREIGN_KEY_CHECKS=1;
