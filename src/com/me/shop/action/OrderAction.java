@@ -136,9 +136,9 @@ public class OrderAction extends ActionSupport implements ModelDriven<Order> {
 				.getAttribute("existUser");
 		double restMoney = existUser.getBalance() - payment;
 		if(restMoney < 0){
-			String json="{\"msg\":钱不够啊！}";
-			ServletActionContext.getRequest().setAttribute("msg", json);
+			String json="{\"msg\":\"not enough!!\"}";
 			ServletActionContext.getResponse().getWriter().print(json);
+			ServletActionContext.getResponse().getWriter().close();
 			return "orderPage";//钱不够跳转回原来的order.jsp
 		}
 		existUser.setBalance(restMoney);
@@ -147,8 +147,8 @@ public class OrderAction extends ActionSupport implements ModelDriven<Order> {
 		// 修改订单状态为2:已经付款:
 		currOrder.setState(2);
 		orderService.update(currOrder);
-		this.addActionMessage("支付成功!订单编号为: "+currOrder.getOid()+" 付款金额为: "+currOrder.getTotal());
-		return "msg";
+		this.addActionMessage("支付成功!订单编号为: "+currOrder.getOid()+" 付款金额为: "+currOrder.getTotal()+"元....我们将尽快为您安排发货！");
+		return "paySuccess";
 	}
 	// 修改订单的状态:
 	public String updateState(){

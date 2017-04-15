@@ -5,8 +5,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>消息提醒！</title>
 <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+	body{
+	background:url("${pageContext.request.contextPath}/image/background.jpg");
+}
+</style>
 </head>
 <body>
 <div id="divcontent">
@@ -21,9 +26,7 @@
         </font>
         <br />
             <br />
-          <a href="${ pageContext.request.contextPath }/index.action">首页</a>
-          <a href="${ pageContext.request.contextPath }/user_registPage.action">注册</a>
-          <a href="${ pageContext.request.contextPath }/user_loginPage.action">登录</a>
+          <a href="${ pageContext.request.contextPath }/index.action"><h1>《《《《首页</h1></a>
          </td>
       </tr>
     </table>

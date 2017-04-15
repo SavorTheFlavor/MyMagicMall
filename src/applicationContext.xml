@@ -100,6 +100,7 @@
 	<!-- 配置OrderAction -->
 	<bean id="orderAction" class="com.me.shop.action.OrderAction" scope="prototype">
 		<property name="orderService" ref="orderService"/>
+		<property name="userService" ref="userService"/>
 	</bean>
 	
 	<!-- 配置GameAction -->

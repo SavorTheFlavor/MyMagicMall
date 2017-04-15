@@ -99,6 +99,7 @@ body{
 				</div>
 			<form id="orderForm" action="${ pageContext.request.contextPath }/order_payOrder.action" method="post">
 				<input type="hidden" name="oid" value="<s:property value="model.oid"/>"/>
+				<input type="hidden" name="uMoney" value="<s:property value="model.user.balance"/>" />
 				<div class="span24">
 					<p>
 							收货地址：<input name="addr" type="text" value="<s:property value="model.user.addr"/>" style="width:350px" />
@@ -110,7 +111,7 @@ body{
 						</p>
 						<hr />
 						<p style="text-align:right">
-							<a href="javascript:document.getElementById('orderForm').submit();">
+							<a href="javascript:mySubmit();">
 								<img src="${pageContext.request.contextPath}/images/finalbutton.gif" width="204" height="51" border="0" />
 							</a>
 						</p>
@@ -120,28 +121,21 @@ body{
 	
 	</div>
 
-	<div class="span24">
-		<div class="copyright">All Rights Reserved  2017 MyInterestingShopMall</div>
-	</div>
 	<script type="text/javascript">
 	//为orderForm表单绑定一个自定义的提交事件
-	var form = $("#orderForm");
-     var action = form.attr("action");
-    form.on("submit",function(){
-    
-    	$.ajax({
-		  type: "post",
-		  data:form.serialize(),
-		  dataType: "json",//返回的类型！！！！
-		  url: action,
-		  async:false,//改为同步请求..
-		  success:
-			  function(res){
-			  	sweetAlert(res.msg);
-		  }
-		});
-        return false;//阻止原本的提交事件
-    });
+	function mySubmit(){
+			var form = $("#orderForm");
+		     var action = form.attr("action");
+	    	var money = $("input[name='uMoney']").val();
+	    	var price = '<s:property value="model.total"/>';
+	    	if(money - price < 0){
+	    		sweetAlert("钱不够啊！");
+	    		return;
+	    	}
+	    	//妈的..ajax请求是无法进行页面跳转的，瞎搞了那么久
+	    	form.submit();
+	}
+	
 	</script>
 </body>
 </html>

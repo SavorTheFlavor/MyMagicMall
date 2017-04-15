@@ -14,6 +14,11 @@ public class CategorySecond {
 	private Category category;
 	// 配置商品集合
 	private Set<Product> products = new HashSet<Product>();
+	
+	 public CategorySecond() {
+	
+	}
+	
 	public Integer getCsid() {
 		return csid;
 	}

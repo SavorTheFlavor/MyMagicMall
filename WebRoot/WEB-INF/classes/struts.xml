@@ -63,6 +63,7 @@
 			<result name="findByUid">/WEB-INF/jsp/orderList.jsp</result>
 			<result name="findByOid">/WEB-INF/jsp/order.jsp</result>
 			<result name="orderPage">/WEB-INF/jsp/order.jsp</result>
+			<result name="paySuccess">/WEB-INF/jsp/msg.jsp</result>
 			<result name="updateStateSuccess" type="redirectAction">order_findByUid.action?page=1</result>
 		</action>
 		

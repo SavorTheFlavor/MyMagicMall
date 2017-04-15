@@ -94,7 +94,6 @@ $(function(){
 					  async:false,//改为同步请求..
 					  success:
 						  function(data){
-						  	  sweetAlert("waea"+data.msg);
 							  if(data.msg == "Non-existent"){
 								  sweetAlert("请登录~！");
 								  return;
