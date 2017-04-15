@@ -30,6 +30,12 @@ public class AdminProductAction extends ActionSupport implements
 	public Product getModel() {
 		return product;
 	}
+	
+	//由于模型驱动无法接收对象？所有只能自己另设参数接收，并手动注入....
+	private Integer theCategorySecond;
+	public void setTheCategorySecond(Integer theCategorySecond) {
+		this.theCategorySecond = theCategorySecond;
+	}
 
 	// 接收page参数
 	private Integer page;
@@ -140,6 +146,10 @@ public class AdminProductAction extends ActionSupport implements
 	public String update() throws IOException {
 		// 将信息修改到数据库
 		product.setPdate(new Date());
+		
+		//注入categorySecond
+		CategorySecond myCS = categorySecondService.findByCsid(theCategorySecond);
+		product.setCategorySecond(myCS);
 		
 		// 上传:
 		if(upload != null ){

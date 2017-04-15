@@ -31,7 +31,7 @@
 						所属的一级分类：
 					</td>
 					<td class="ta_01" bgColor="#ffffff" >
-						<select name="category.cid">
+						<select name="theCategory">
 							<s:iterator var="c" value="cList">
 								<option value="<s:property value="#c.cid"/>" <s:if test="#c.cid==model.category.cid">selected</s:if>><s:property value="#c.cname"/></option>
 							</s:iterator>

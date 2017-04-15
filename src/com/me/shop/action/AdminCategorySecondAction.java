@@ -27,6 +27,8 @@ public class AdminCategorySecondAction extends ActionSupport implements
 	private CategorySecondService categorySecondService;
 	// 注入一级分类的Service
 	private CategoryService categoryService;
+	
+	
 
 	public void setPage(Integer page) {
 		this.page = page;
