@@ -5,7 +5,7 @@
 }
 
 function runzp() {
-	var data = '[{"id":1,"prize":"哥们，真幸运！或者说，有毅力？可很遗憾告诉你，我那99部爽片在早就被社会主义和谐化了呢...\\n怎样？不甘心？算了，还是随便抛个网站给你吧。\\n http\://zzz.wsmoy.com/uuu.php?sid=80042&aid=12360&_l=1474781807","v":1.0},{"id":2,"prize":"这才是真福利（<<:-D:-)>>这个是获奖凭证），虽然想分享，可奈何百度云链接总是秒挂","v":2.0},{"id":3,"prize":"恭喜获得999G学习资料！想要的话私聊我（《:-P》这个是中奖证明），链接老挂，分享不了","v":48.0}]';
+	var data = '[{"id":1,"prize":"哥们，真幸运！或者说，有毅力？呐，给你的学习资料（真的只是学习资料，哈哈~~》》》http://pan.baidu.com/s/1nuD49fF","v":1.0},{"id":2,"prize":"你获得了999块钱和9999积分.....","v":2.0},{"id":3,"prize":"你获得了999积分啊！高兴吗？","v":48.0}]';
 	var obj = eval('(' + data + ')');
 	var result = randomnum(1, 100);
 	var line = 0;
@@ -72,7 +72,7 @@ function runzp() {
 			angle = r5;
 			break;
 		}
-		myreturn.prize = "我的毛片呢";
+		myreturn.prize = "我要学习";
 
 	}
 	myreturn.angle = angle;

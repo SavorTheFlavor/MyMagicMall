@@ -62,18 +62,16 @@ body{background:url("./images/background.jpg");}
 	
 	<div class="reward">
 		<div class="first_price"><h1>一等奖！</h1>
-			99部爽片！！！我说真的！<br />
-			不过那微乎其微的概率...<br />
-			劝你们还是放过你们的手指吧
+			999G学(fu)习(li)资(hao)料(che)！！！！尽情体验学习的快感吧！
 		</div>
 		<div class="second_price"><h2>二等奖！</h2>
-			9箱本子和9款不可描述的游戏！！咳、咳，注意身体
+			999元以及9999积分！！
 		</div>
 		<div class="third_price"><h3>三等奖！</h3>
-			999G学习资料！！！！尽情体验学习的快感吧！
+			999积分！
 		</div>
 		<br />
-		<div><h4>奖金均以百度云网盘链接的形式发放</h4></div>
+		<div><h4>学习资料将以百度云网盘链接的形式发放</h4></div>
 	</div>
 
 <script type="text/javascript">
@@ -118,6 +116,34 @@ $(function(){
 								easing: $.easing.easeOutSine,//动画效果，需加载jquery.easing.min.js
 								callback: function(){
 									sweetAlert(a.prize+a.message);//简单的弹出获奖信息
+									//根据不同的获奖情况分配奖品
+									
+									if(a.id != 1){
+										var wMoney=0,wPoints=0;
+										
+										if(a.id == 2){
+											wMoney = 999;
+											wPoints = 9999;
+										}else if(a.id == 3){
+											wMoney = 0;
+											wPoints = 999;
+										}
+										
+										$.ajax({
+										  type: "post",
+										  data:{"woney":wMoney,"woints":wPoints},
+										  dataType: "json",//返回的类型！！！！
+										  async:false,//改为同步请求..
+										  url: "${pageContext.request.contextPath}/game_winning.action",
+										  success:
+											  function(data){
+												  $("#coupon").text('优惠券：'+data.coupon+'张');
+												  $("#balance").text('钱：'+data.balance+'元');
+												  $("#points").text('积分：'+data.points);
+										  }
+										});
+										
+									}
 								}
 						 });
 					}

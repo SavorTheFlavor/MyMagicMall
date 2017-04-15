@@ -101,6 +101,39 @@ public class GameAction extends ActionSupport{
 		ServletActionContext.getResponse().getWriter().close();//要记得close！！！！不然返回整个页面！！！！
 		return "rotatePage";
 	}
+
+	//中奖接收的参数
+	//为了解决set方法因大小写问题而找不到的问题，于是就自己随便起了个名字
+	//set方法找不到就无法接收参数了
+	private double woney;
+	public void setWoney(double woney) {
+		this.woney = woney;
+	}
+	
+	private int woints;
+	public void setWoints(int woints) {
+		this.woints = woints;
+	}
+	/**
+	 * 中奖~~
+	 * @throws IOException 
+	 */
+	public String winning() throws IOException{
+		existUser = (User) ServletActionContext.getRequest().getSession().getAttribute("existUser");
+		if(existUser == null){
+			return "login";
+		}
+		existUser.setBalance(existUser.getBalance()+woney);
+		existUser.setPoints(existUser.getPoints()+woints);
+		StringBuffer json = new StringBuffer("{\"coupon\":"+existUser.getCoupon()+
+				",\"balance\":"+existUser.getBalance()+
+				",\"points\":"+existUser.getPoints()+
+				"}");
+		ServletActionContext.getResponse().getWriter().write(json.toString());
+		ServletActionContext.getResponse().getWriter().close();//要记得close！！！！不然返回整个页面！！！！
+		return "rotatePage";
+	}
+	
 	
 	private double money;//要兑换金钱的数量
 	public void setMoney(double money) {
@@ -116,8 +149,6 @@ public class GameAction extends ActionSupport{
 	public void setPoints(int points) {
 		this.points = points;
 	}
-
-
 	/**
 	 * 跳转到积分兑换界面
 	 */

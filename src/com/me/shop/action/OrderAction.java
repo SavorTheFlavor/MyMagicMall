@@ -142,12 +142,14 @@ public class OrderAction extends ActionSupport implements ModelDriven<Order> {
 			return "orderPage";//钱不够跳转回原来的order.jsp
 		}
 		existUser.setBalance(restMoney);
+		int givenPoints = (int)Math.floor(payment);
+		existUser.setPoints(existUser.getPoints()+givenPoints);//赠送的积分
 		userService.update(existUser);
 		
 		// 修改订单状态为2:已经付款:
 		currOrder.setState(2);
 		orderService.update(currOrder);
-		this.addActionMessage("支付成功!订单编号为: "+currOrder.getOid()+" 付款金额为: "+currOrder.getTotal()+"元....我们将尽快为您安排发货！");
+		this.addActionMessage("支付成功!订单编号为: "+currOrder.getOid()+" 付款金额为: "+currOrder.getTotal()+"元   获赠积分"+String.valueOf(givenPoints)+"点....我们将尽快为您安排发货！");
 		return "paySuccess";
 	}
 	// 修改订单的状态:
