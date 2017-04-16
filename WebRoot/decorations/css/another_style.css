@@ -7,7 +7,7 @@
     src:url(../fonts/Roboto-Regular.ttf) format('truetype');
 }
 html,body{
-	background:#C7EDCC;
+	background:url("../../image/background.jpg");;
 	font-size: 100%;
 	font-family: 'Roboto-Regular';
 }

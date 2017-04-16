@@ -225,7 +225,7 @@ body{
 	</div>
 <div class="container footer">
 	<div class="span24">
-		<div class="copyright">All Rights Reserved  2017 MyInterestingShopMall</div>
+		<div class="copyright">All Rights Reserved  2017 MyMagicMall</div>
 	</div>
 </div>
 <div id="_my97DP" style="position: absolute; top: -1970px; left: -1970px;"><iframe style="width: 190px; height: 191px;" src="./会员注册 - Powered By Mango Team_files/My97DatePicker.htm" frameborder="0" border="0" scrolling="no"></iframe></div></body></html>

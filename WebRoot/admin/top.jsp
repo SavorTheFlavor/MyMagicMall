@@ -33,7 +33,7 @@ TH {
 		<table width="100%" height="70%"  border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td>
-					<h1>我的商城后台管理系统</h1>
+					<h1>魔幻商城后台管理系统</h1>
 <%-- 					<img width="100%" src="${pageContext.request.contextPath}/images/top_01.jpg"> --%>
 				</td>
 

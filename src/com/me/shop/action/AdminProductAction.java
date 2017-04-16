@@ -112,6 +112,11 @@ public class AdminProductAction extends ActionSupport implements
 	
 			product.setImage("products/" + uploadFileName);
 		}
+		
+		//注入categorySecond
+		CategorySecond myCS = categorySecondService.findByCsid(theCategorySecond);
+		product.setCategorySecond(myCS);
+		
 		productService.save(product);
 		return "saveSuccess";
 	}

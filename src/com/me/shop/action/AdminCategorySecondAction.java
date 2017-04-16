@@ -73,6 +73,8 @@ public class AdminCategorySecondAction extends ActionSupport implements
 
 	// 添加二级分类的方法:
 	public String save() {
+		Category category = categoryService.findByCid(theCategory);//手动注入一级分类
+		categorySecond.setCategory(category);
 		categorySecondService.save(categorySecond);
 		return "saveSuccess";
 	}
@@ -103,7 +105,7 @@ public class AdminCategorySecondAction extends ActionSupport implements
 	}
 	// 修改二级分类的方法:
 	public String update(){
-		Category category = categoryService.findByCid(theCategory);
+		Category category = categoryService.findByCid(theCategory);//手动注入一级分类
 		categorySecond.setCategory(category);
 		categorySecondService.update(categorySecond);
 		return "updateSuccess";
