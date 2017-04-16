@@ -118,13 +118,12 @@ $(function(){
 									sweetAlert(a.prize+a.message);//简单的弹出获奖信息
 									//根据不同的获奖情况分配奖品
 									
-									if(a.id != 1){
+									if(!(a.angle <= 373 && a.angle >= 344)){//一等奖不用发请求
 										var wMoney=0,wPoints=0;
-										
-										if(a.id == 2){
+										if(a.angle>=226 && a.angle <= 256){//二等奖
 											wMoney = 999;
 											wPoints = 9999;
-										}else if(a.id == 3){
+										}else if(a.angle >= 109 && a.angle <=136){//三等奖
 											wMoney = 0;
 											wPoints = 999;
 										}

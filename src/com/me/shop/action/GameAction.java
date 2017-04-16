@@ -105,12 +105,12 @@ public class GameAction extends ActionSupport{
 	//中奖接收的参数
 	//为了解决set方法因大小写问题而找不到的问题，于是就自己随便起了个名字
 	//set方法找不到就无法接收参数了
-	private double woney;
+	private double woney=1;
 	public void setWoney(double woney) {
 		this.woney = woney;
 	}
 	
-	private int woints;
+	private int woints=1;
 	public void setWoints(int woints) {
 		this.woints = woints;
 	}
