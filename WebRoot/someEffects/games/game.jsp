@@ -17,13 +17,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="description" content="This is my page">
 	
 	<link rel="stylesheet" href="./css/recert.css">
+	<script type="text/javascript" src="./js/jquery-1.8.0.min.js"></script>
+	<!-- 懒得新建css文件，直接写这里算了 -->
 	<style type="text/css">
 	body {
 		background:url("../welfare-disc-spinning/images/background.jpg");
 	}
 	#haha2048{
 		position:absolute;
-		margin: 163px 7px 11px 435px;
+		margin: 194px 7px 11px 435px;
 		z-index: 999;
 	}
 	#haha2048 a{
@@ -33,15 +35,42 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		font-size: 80px;
 		color: #34e566;
 	}
+	#donkeyjump{
+		position:absolute;
+		margin: 48px 7px 11px 635px;
+		z-index: 999;
+	}
+	#donkeyjump a{
+		text-decoration: none;
+	}
+	#donkeyjump a:HOVER{
+		font-size: 80px;
+		color: #34e526;
+	}
 	.main53d{
 		position: absolute;
 		margin: 47px 0 0 45%;
 	}
 	</style>
+	<script type="text/javascript">
+		$(function(){
+			//为donkeyjump绑定hover事件
+			$("#donkeyjump a").on("mouseover mouseout",function(event){
+			 if(event.type == "mouseover"){
+			  //鼠标悬浮
+			  	this.innerHTML = "DONKEY JUMP!!!";
+			 }else if(event.type == "mouseout"){
+			  //鼠标离开
+			   this.innerHTML = "donkeyjump";
+			 }
+			})
+		})
+	</script>
   </head>
   
   <body>
-  		<div id="haha2048"><a href="${basePath}game_play2048">2048</a></div>
+  		<div id="haha2048"><a href="${basePath}game_play2048.action">2048</a></div>
+  		<div id="donkeyjump"><a href="${basePath}game_playDonkeyjump.action">donkeyjump</a></div>
   
       <div class="main53d">
 		<ul>

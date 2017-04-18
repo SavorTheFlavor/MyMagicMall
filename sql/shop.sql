@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50520
 File Encoding         : 65001
 
-Date: 2017-04-16 13:51:23
+Date: 2017-04-16 17:37:04
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -123,7 +123,7 @@ CREATE TABLE `orderitem` (
   KEY `FKE8B2AB6140ACF87A` (`oid`),
   CONSTRAINT `FKE8B2AB6140ACF87A` FOREIGN KEY (`oid`) REFERENCES `orders` (`oid`),
   CONSTRAINT `FKE8B2AB6171DB7AE4` FOREIGN KEY (`pid`) REFERENCES `product` (`pid`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of orderitem
@@ -135,6 +135,7 @@ INSERT INTO `orderitem` VALUES ('27', '1', '122222', '85', '34');
 INSERT INTO `orderitem` VALUES ('28', '1', '2', '77', '35');
 INSERT INTO `orderitem` VALUES ('29', '6', '1368', '1', '36');
 INSERT INTO `orderitem` VALUES ('30', '1', '0.01', '82', '37');
+INSERT INTO `orderitem` VALUES ('31', '1', '0.1', '98', '38');
 
 -- ----------------------------
 -- Table structure for orders
@@ -152,7 +153,7 @@ CREATE TABLE `orders` (
   PRIMARY KEY (`oid`),
   KEY `FKC3DF62E5AA3D9C7` (`uid`),
   CONSTRAINT `FKC3DF62E5AA3D9C7` FOREIGN KEY (`uid`) REFERENCES `user` (`uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of orders
@@ -164,6 +165,7 @@ INSERT INTO `orders` VALUES ('34', '122222', '2017-04-15 13:44:49', '1', null, n
 INSERT INTO `orders` VALUES ('35', '2', '2017-04-15 14:00:00', '4', '沈晶秉', '15726607618', '南极', '7');
 INSERT INTO `orders` VALUES ('36', '1368', '2017-04-16 12:29:00', '1', null, null, null, '7');
 INSERT INTO `orders` VALUES ('37', '0.01', '2017-04-16 12:48:15', '2', '沈晶秉', '15726607618', '南极', '7');
+INSERT INTO `orders` VALUES ('38', '0.1', '2017-04-16 17:31:55', '2', '沈晶秉', '15726607618', '南极', '7');
 
 -- ----------------------------
 -- Table structure for product
@@ -211,7 +213,7 @@ INSERT INTO `product` VALUES ('96', '毛茸茸的小老鼠', '12', '12', 'produc
 INSERT INTO `product` VALUES ('97', '美媛春', '123', '321', 'products/meiyuanchun.jpg', '美媛春肾宝，他好我也好~~\r\n', '1', '2017-04-16 13:27:36', '45');
 INSERT INTO `product` VALUES ('98', '辣条', '0.5', '0.1', 'products/latiao.jpg', '', '1', '2017-04-16 13:28:11', '20');
 INSERT INTO `product` VALUES ('99', '脑白金', '333', '33', 'products/brainwhiteandgolden.jpg', '送礼就送脑白金~', '1', '2017-04-16 13:29:11', '45');
-INSERT INTO `product` VALUES ('100', '死亡领主', '13332', '13232', 'products/darknight.jpg', '死亡骑士曾经是正义的人民，他们曾经勇敢而无畏地对抗黑暗，但他们与之对抗的邪恶并非轻易就能驱逐。死亡之力将战死的英雄唤醒，赋予其近似永恒的力量。这些曾经的英雄披上更加强大的装甲，操纵着所向无敌的黑暗魔力，去进行他们曾经与之对抗的一切暴行....', '1', '2017-04-16 13:34:16', '46');
+INSERT INTO `product` VALUES ('100', '死亡领主', '13332', '13232', 'products/darknight.jpg', '死亡骑士曾经是正义的人民，他们曾经勇敢而无畏地对抗黑暗，但他们与之对抗的邪恶并非轻易就能驱逐。死亡之力将战死的英雄唤醒，赋予其近似永恒的力量。这些曾经的英雄披上更加强大的装甲，操纵着所向无敌的黑暗魔力，去进行他们曾经与之对抗的一切暴行....', '1', '2017-04-16 17:33:10', '46');
 
 -- ----------------------------
 -- Table structure for user
@@ -236,6 +238,6 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('7', 'aaa', 'aaa', '沈晶秉', 'aaa@shop.com', '15726607618', '南极', '1', null, '291.000000', '3', '14958');
+INSERT INTO `user` VALUES ('7', 'aaa', 'aaa', '沈晶秉', 'aaa@shop.com', '15726607618', '南极', '1', null, '354.900000', '14', '11203');
 INSERT INTO `user` VALUES ('8', 'bbb', 'bbb', '沃姚库', 'bbb@shop.com', '18726607618', '月球', '1', '', '111.000000', '1', '0');
 SET FOREIGN_KEY_CHECKS=1;

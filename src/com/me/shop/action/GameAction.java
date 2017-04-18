@@ -69,6 +69,51 @@ public class GameAction extends ActionSupport{
 		
 		return "2048";
 	}
+	
+	/**
+	 * 驴跳小游戏 -- 跳转到donkeyjump
+	 */
+	public String playDonkeyjump(){
+		existUser = (User) ServletActionContext.getRequest().getSession().getAttribute("existUser");
+		if(existUser == null){
+			return "login";
+		}
+		return "donkeyjump";
+	}
+	
+	//用于接收游戏得分
+	private Integer score;
+	public void setScore(Integer score) {
+		this.score = score;
+	}
+
+
+	/**
+	 * 计算donkeyjump游戏得分，并增加用户积分
+	 * @return
+	 * @throws IOException 
+	 */
+	public String accountForDonkeyjump() throws IOException{
+		//接收参数
+		int score = Integer.parseInt(ServletActionContext.getRequest().getParameter("score"));
+		
+		//将积分保存到用户中
+			existUser = (User) ServletActionContext.getRequest().getSession().getAttribute("existUser");
+			if(existUser == null){
+				return "login";
+			}
+		  existUser.setPoints(existUser.getPoints()+score/200);
+		 userService.update(existUser);
+		 
+		 //使用Json向ajax请求返回数据
+		 String json="{\"points\":"+score/200+"}"; 
+		 
+		 //向页面返回数据
+		ServletActionContext.getResponse().getWriter().write(json);
+		ServletActionContext.getResponse().getWriter().close();//要记得close！！！！不然返回整个页面！！！！
+		
+		return "donkeyjump";
+	}
 
 	/**抽奖!!!!!!!!!
 	 * @throws IOException */

@@ -237,7 +237,7 @@ function gameover(){
 		  async:false,//改为同步请求..
 		  success:
 			  function(p){
-			  	sweetAlert("Game Over!\n 你从游戏中获得了"+p.points+"点积分");
+			  	sweetAlert("Game Over!\n\n 你从游戏中获得了"+p.points+"点积分");
 			  	$("#points").text('积分 :'+p.uPoints);
 		  }
 		});

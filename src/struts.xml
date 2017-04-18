@@ -71,6 +71,7 @@
 		<action name="game_*" class="gameAction" method="{1}">
 			<result name="login">/WEB-INF/jsp/login.jsp</result>
 			<result name="2048">/someEffects/games/2048/index.jsp</result>
+			<result name="donkeyjump">/someEffects/games/donkeyjump/index.jsp</result>
 			<result name="rotatePage">/someEffects/welfare-disc-spinning/welfare.jsp</result>
 			<result name="exchangePage">/someEffects/floatingVapor/exchange.jsp</result>
 		</action>
