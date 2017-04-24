@@ -2,4 +2,6 @@ eclipse.preferences.version=1
 encoding//WebRoot/someEffects/games/2048/index.jsp=UTF-8
 encoding//WebRoot/someEffects/games/donkeyjump/index.jsp=UTF-8
 encoding//WebRoot/someEffects/welfare-disc-spinning/welfare.jsp=UTF-8
+encoding//src/com/me/shop/game/Tetris/ControlPanel.java=UTF-8
+encoding//src/com/me/shop/game/Tetris/ErsBlocksGame.java=UTF-8
 encoding/<project>=UTF-8

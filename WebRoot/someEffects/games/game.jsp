@@ -47,6 +47,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		font-size: 80px;
 		color: #34e526;
 	}
+	#tetris{
+		position:absolute;
+		margin: 196px 7px 11px 855px;
+		z-index: 999;
+	}
+	#tetris a{
+		text-decoration: none;
+	}
+	#tetris a:HOVER{
+		font-size: 80px;
+		color: #34e526;
+	}
 	.main53d{
 		position: absolute;
 		margin: 47px 0 0 45%;
@@ -71,7 +83,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
   		<div id="haha2048"><a href="${basePath}game_play2048.action">2048</a></div>
   		<div id="donkeyjump"><a href="${basePath}game_playDonkeyjump.action">donkeyjump</a></div>
-  
+  		<div id="tetris"><a href="${basePath}game_playTetris.action">Tetris!</a></div>
       <div class="main53d">
 		<ul>
 			<li><img src="./images/main5-pic1.png"> </li>

@@ -2,8 +2,10 @@ package com.me.shop.dao;
 
 import java.util.List;
 
+import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
+import com.me.shop.game.Tetris.ErsBlocksGame;
 import com.me.shop.utils.PageHibernateCallback;
 import com.me.shop.vo.User;
 
@@ -43,6 +45,8 @@ public class UserDao extends HibernateDaoSupport {
 	public void update(User existUser) {
 		this.getHibernateTemplate().update(existUser);
 	}
+	
+	
 
 	// 用户登录的方法
 	public User login(User user) {
@@ -77,5 +81,36 @@ public class UserDao extends HibernateDaoSupport {
 
 	public void delete(User existUser) {
 		this.getHibernateTemplate().delete(existUser);
+	}
+
+	public void playTetris(User existUser) {
+		//为俄罗斯方块游戏开启一个线程
+		MyThread mt = new MyThread();
+		mt.setHibernateTemplate(getHibernateTemplate());
+		mt.setExistUser(existUser);
+		mt.start();
+		
+	}
+}
+
+class MyThread extends Thread implements Runnable{
+	private HibernateTemplate ht;
+	public void setHibernateTemplate(HibernateTemplate ht){
+		this.ht = ht;
+	}
+	
+	private User existUser;
+	public void setExistUser(User existUser) {
+		this.existUser = existUser;
+	}
+
+	@Override
+	public void run() {
+		while(true){
+			ErsBlocksGame ers = new ErsBlocksGame("俄罗斯方块");
+			existUser.setPoints(existUser.getPoints()+ers.getScore()/5);
+			ht.update(existUser);
+			break;
+		}
 	}
 }

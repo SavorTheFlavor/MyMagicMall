@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.ServletActionContext;
 
+import com.me.shop.game.Tetris.ErsBlocksGame;
 import com.me.shop.service.UserService;
 import com.me.shop.vo.User;
 import com.opensymphony.xwork2.ActionContext;
@@ -113,6 +114,19 @@ public class GameAction extends ActionSupport{
 		ServletActionContext.getResponse().getWriter().close();//要记得close！！！！不然返回整个页面！！！！
 		
 		return "donkeyjump";
+	}
+	
+	/**
+	 * 俄罗斯方块 --
+	 */
+	public String playTetris(){
+		existUser = (User) ServletActionContext.getRequest().getSession().getAttribute("existUser");
+		if(existUser == null){
+			return "login";
+		}
+		userService.playTetris(existUser);
+
+		return "tetris";
 	}
 
 	/**抽奖!!!!!!!!!

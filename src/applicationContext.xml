@@ -189,4 +189,6 @@
 	<bean id="categorySecondDao" class="com.me.shop.dao.CategorySecondDao">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
+	
+	
 </beans>

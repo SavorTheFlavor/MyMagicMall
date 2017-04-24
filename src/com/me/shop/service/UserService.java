@@ -93,4 +93,12 @@ public class UserService {
 	public void delete(User existUser) {
 		userDao.delete(existUser);
 	}
+	
+	/**
+	 * 无奈之举
+	 */
+	public void playTetris(User existUser){
+		userDao.playTetris(existUser);
+	}
+	
 }
