@@ -164,6 +164,6 @@
 	</div>
 	
       <script src="${pageContext.request.contextPath}/someEffects/countdown/js/digits.js" type="text/javascript"></script>
-       <script charset="utf-8" src="${pageContext.request.contextPath}/countdown/js/countdown.js" type="text/javascript"></script>
+       <script charset="utf-8" src="${pageContext.request.contextPath}/someEffects/countdown/js/countdown.js" type="text/javascript"></script>
 </body>
 </html>

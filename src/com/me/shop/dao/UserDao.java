@@ -23,6 +23,7 @@ public class UserDao extends HibernateDaoSupport {
 		if (list != null && list.size() > 0) {
 			return list.get(0);
 		}
+		
 		return null;
 	}
 
