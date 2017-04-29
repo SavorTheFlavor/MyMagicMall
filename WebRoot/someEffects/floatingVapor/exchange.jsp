@@ -22,7 +22,7 @@ p{color:rgb(72,121,76);font-size:23px;}
 .user_info{
 	position: absolute;
 	font-size:20px;
-	margin: 9px -4px 0 30%;
+	margin: 9px -4px 0 33%;
 	color:pink;
 }
 .exchange{
