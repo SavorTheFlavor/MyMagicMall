@@ -52,6 +52,16 @@ public class ProductDao extends HibernateDaoSupport {
 	public Product findByPid(Integer pid) {
 		return this.getHibernateTemplate().get(Product.class, pid);
 	}
+	
+	// 根据商品ID查询商品，并且取销售量前五名
+	public List<Product> findByPidForRanking(int begin, int limit) {
+		String hql = "from Product order by sale_count desc";
+		List<Product> list =  this.getHibernateTemplate().execute(new PageHibernateCallback<Product>(hql, null, begin, limit));
+		if(list != null && list.size() > 0){
+			return list;
+		}
+		return null;
+	}
 
 	// 根据分类id查询商品的个数
 	public int findCountCid(Integer cid) {
@@ -130,5 +140,7 @@ public class ProductDao extends HibernateDaoSupport {
 	public void update(Product product) {
 		this.getHibernateTemplate().update(product);
 	}
+
+	
 
 }

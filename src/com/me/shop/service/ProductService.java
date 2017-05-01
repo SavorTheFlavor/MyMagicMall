@@ -37,6 +37,11 @@ public class ProductService {
 	public Product findByPid(Integer pid) {
 		return productDao.findByPid(pid);
 	}
+	
+	
+	public List<Product> findByPidForRanking(int begin, int limit) {
+		return productDao.findByPidForRanking(begin, limit);
+	}
 
 	// 根据一级分类的cid带有分页查询商品
 	public PageBean<Product> findByPageCid(Integer cid, int page) {
@@ -139,5 +144,7 @@ public class ProductService {
 	public void update(Product product) {
 		productDao.update(product);
 	}
+
+	
 
 }

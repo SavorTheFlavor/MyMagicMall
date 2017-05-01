@@ -38,7 +38,7 @@
 								<tr
 									style="FONT-WEIGHT: bold; FONT-SIZE: 12pt; HEIGHT: 25px; BACKGROUND-COLOR: #afd1f3">
 
-									<td align="center" width="18%">
+									<td align="center" width="9%">
 										序号
 									</td>
 									<td align="center" width="17%">
@@ -53,6 +53,9 @@
 									<td align="center" width="17%">
 										是否全新
 									</td>
+									<td align="center" width="9%">
+										销量
+									</td>
 									<td width="7%" align="center">
 										编辑
 									</td>
@@ -64,7 +67,7 @@
 										<tr onmouseover="this.style.backgroundColor = 'white'"
 											onmouseout="this.style.backgroundColor = '#F5FAFE';">
 											<td style="CURSOR: hand; HEIGHT: 22px" align="center"
-												width="18%">
+												width="9%">
 												<s:property value="#status.count"/>
 											</td>
 											<td style="CURSOR: hand; HEIGHT: 22px" align="center"
@@ -87,6 +90,10 @@
 												<s:else>
 													否
 												</s:else>
+											</td>
+											<td style="CURSOR: hand; HEIGHT: 22px" align="center"
+												width="9%">
+												<s:property value="#p.sale_count"/>
 											</td>
 											<td align="center" style="HEIGHT: 22px">
 												<a href="${ pageContext.request.contextPath }/adminProduct_edit.action?pid=<s:property value="#p.pid"/>">

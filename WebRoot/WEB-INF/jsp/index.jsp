@@ -64,6 +64,37 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath}/decorations/js/jquery.min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/decorations/js/responsiveslides.min.js"></script>
 	<!-- 特效-->
+	
+	<!-- 排行榜效果 -->
+	<style>
+    #sale-ranking ul{counter-reset:section;padding-bottom:20px;}
+    #sale-ranking li{width:300px; border-bottom: 1px dotted #ccc; line-height: 30px; height: 30px; overflow:hidden }
+    #sale-ranking li:before{counter-increment:section;content:counter(section);display:inline-block;padding:0 6px;margin-right:10px;height:18px;line-height:18px;background:#717070;color:#fff;border-radius:3px;font-size:9px}
+    #sale-ranking li:nth-child(1):before{background:#ff6a00}
+    #sale-ranking li:nth-child(2):before{background:#107db4}
+    #sale-ranking li:nth-child(3):before{background:#56ae11}
+    #sale-ranking li{width:300px; border-bottom: 1px dotted #ccc; line-height: 30px; height: 30px; overflow:hidden }
+    #sale-ranking li i{display:inline-block;font-style:initial;padding:0 6px;margin-right:10px;height:18px;line-height:18px;background:#717070;color:#fff;border-radius:3px;font-size:9px}
+    #sale-ranking .red1{background:#ff6a00}
+    #sale-ranking .red2{background:#107db4}
+    #sale-ranking .red3{background:#56ae11}
+    #sale-ranking li a:hover {font-size:24px;}
+	</style>
+	 
+<script>
+    listsort()
+    //显示排行
+    function listsort() {
+        var index = 0;
+        $("#sale-ranking li").each(function () {
+            index++;
+            var num = $("<i>" + index + "</i>");
+            if (index <= 3)
+                num.addClass("red" +index);
+            $(this).prepend(num);
+        });
+    }
+</script>
 </head>
 <body>
 <!-- 绚丽时钟 -->
@@ -84,7 +115,17 @@
 	<%@ include file="menu.jsp" %>
 
 </div>	
-<div class="container index">
+<div class="container index" style="height:100%;">
+		<!-- 展示销量排行榜 -->
+		<div style="position:fixed;z-index:999;top:300px;left:0;background-color:#232323;width:310px;" id="sale-ranking">
+			<center><div style="color:white;font-size:28px;margin-top:20px;margin-bottom:20px;">销售排行榜</div></center>
+			<ul>
+				<s:iterator var="p" value="rList">
+				    <li><a href="${ pageContext.request.contextPath }/product_findByPid.action?pid=<s:property value="#p.pid"/>" target="_blank"><s:property value="#p.pname"/></a><span style="color:white;display:inline-block;float:right;"><s:property value="#p.sale_count"/></span></li>
+				    
+			    </s:iterator>
+			</ul>
+		</div>
 
 		<div class="span24">
 			<div id="hotProduct" class="hotProduct clearfix">
@@ -92,11 +133,11 @@
 						<strong style="color:red;">hot！！！</strong>
 					</div>
 					<ul class="tab">
-							<li class="current">
-								<a href="./蔬菜分类.htm?tagIds=1" target="_blank"></a>
+							<li>
+								<a target="_blank"></a>
 							</li>
 							<li>
-								<a  target="_blank"></a>
+								<a target="_blank"></a>
 							</li>
 							<li>
 								<a target="_blank"></a>
@@ -158,12 +199,12 @@
 			</div>
 		</div>
 	</div>
-<div class="container footer">
-		<div style="font-size:4px;color:pink">你是管理员？<a style="font-size:4px" href="${pageContext.request.contextPath}/admin">后台登录</a></div>
+<div class="container footer" style="background:rgba(255,255,255,0.5);">
+		<div style="font-size:4px;color:pink">你是管理员？<a style="font-size:4px" href="${pageContext.request.contextPath}/admin/index.jsp">后台登录</a></div>
 		<div class="copyright">All Rights Reserved  2017 MyMagicMall</div>
 	</div>
 	
       <script src="${pageContext.request.contextPath}/someEffects/countdown/js/digits.js" type="text/javascript"></script>
-       <script charset="utf-8" src="${pageContext.request.contextPath}/someEffects/countdown/js/countdown.js" type="text/javascript"></script>
+       <script charset="utf-8" src="${pageContext.request.contextPath}/countdown/js/countdown.js" type="text/javascript"></script>
 </body>
 </html>

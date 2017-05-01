@@ -43,6 +43,11 @@ public class IndexAction extends ActionSupport{
 		List<Product> nList = productService.findOld();
 		// 保存到值栈中:
 		ActionContext.getContext().getValueStack().set("nList", nList);
+		
+		// 查询销售榜前五名
+		List<Product> rList = productService.findByPidForRanking(0, 5);
+		// 保存到值栈中:
+		ActionContext.getContext().getValueStack().set("rList", rList);
 		return "index";
 	}
 	

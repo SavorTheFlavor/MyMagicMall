@@ -15,6 +15,8 @@ public class Product {
 	private String pdesc;
 	private Integer is_hot;//是否为二手货，1不是，0是
 	private Date pdate;
+	private Integer sale_count;
+	
 	// 二级分类的外键:使用二级分类的对象.
 	private CategorySecond categorySecond;
 	public Integer getPid() {
@@ -65,6 +67,13 @@ public class Product {
 	public void setPdate(Date pdate) {
 		this.pdate = pdate;
 	}
+	public Integer getSale_count() {
+		return sale_count;
+	}
+	public void setSale_count(Integer sale_count) {
+		this.sale_count = sale_count;
+	}
+	
 	public CategorySecond getCategorySecond() {
 		return categorySecond;
 	}

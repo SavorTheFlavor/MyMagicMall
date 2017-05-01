@@ -55,7 +55,7 @@ body{
 				<tbody>
 					<s:iterator var="order" value="pageBean.list">
 						<tr>
-							<th colspan="5">订单编号:<s:property value="#order.oid" />&nbsp;&nbsp;&nbsp;&nbsp;订单金额:<font
+							<th colspan="6">订单编号:<s:property value="#order.oid" />&nbsp;&nbsp;&nbsp;&nbsp;订单金额:<font
 								color="red"><s:property value="#order.total" />
 							</font>
 							&nbsp;&nbsp;&nbsp;&nbsp;<font color="red">
@@ -80,6 +80,7 @@ body{
 							<th>价格</th>
 							<th>数量</th>
 							<th>小计</th>
+							<th>操作</th>
 						</tr>
 						<s:iterator var="orderItem" value="#order.orderItems">
 							<tr>
@@ -93,6 +94,12 @@ body{
 								<td width="140"><span class="subtotal">￥<s:property
 											value="#orderItem.subtotal" />
 								</span></td>
+								<s:if test="#order.state == 4">
+									<td><a href="${ pageContext.request.contextPath }/comment_makeCommentPage.action?pid=<s:property value='#orderItem.product.pid'/>">评价</a></td>
+								</s:if>
+								<s:else>
+									<td>无</td>
+								</s:else>
 							</tr>
 						</s:iterator>
 					</s:iterator>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.me.shop.vo.Comment" table="comment">
+		<id name="cid">
+			<generator class="native"/>
+		</id>
+		<property name="username"/>
+		<property name="pid"/>
+		<property name="cdate"/>
+		<property name="star"/>
+		<property name="state"/>
+		<property name="content"/>
+		
+		<!-- <many-to-one name="product" class="com.me.shop.vo.Product" column="pid"/> -->
+	</class>
+</hibernate-mapping>

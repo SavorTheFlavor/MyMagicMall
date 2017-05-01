@@ -112,6 +112,8 @@ public class AdminProductAction extends ActionSupport implements
 	
 			product.setImage("products/" + uploadFileName);
 		}
+		//将商品销量初始化为0
+		product.setSale_count(0);
 		
 		//注入categorySecond
 		CategorySecond myCS = categorySecondService.findByCsid(theCategorySecond);

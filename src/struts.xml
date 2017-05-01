@@ -49,6 +49,12 @@
 			<result name="findByCsid">/WEB-INF/jsp/productList.jsp</result>
 		</action>
 		
+		<!-- 商品评价Action -->
+		<action name="comment_*" class="commentAction" method="{1}">
+			<result name="makeCommentPage">/WEB-INF/jsp/makeComment.jsp</result>
+			<result name="input">/WEB-INF/jsp/makeComment.jsp</result>
+		</action>
+		
 		<!-- 购物车的Action -->
 		<action name="cart_*" class="cartAction" method="{1}">
 			<result name="addCart">/WEB-INF/jsp/cart.jsp</result>

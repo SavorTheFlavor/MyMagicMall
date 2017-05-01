@@ -14,6 +14,7 @@
 		<property name="pdesc"/>
 		<property name="is_hot"/>
 		<property name="pdate"/>
+		<property name="sale_count"/>
 		
 		<many-to-one name="categorySecond" lazy="false" class="com.me.shop.vo.CategorySecond" column="csid"/>
 	</class>

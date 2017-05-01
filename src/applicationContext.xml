@@ -55,6 +55,7 @@
 				<value>com/me/shop/vo/Order.hbm.xml</value>
 				<value>com/me/shop/vo/OrderItem.hbm.xml</value>
 				<value>com/me/shop/vo/AdminUser.hbm.xml</value>
+				<value>com/me/shop/vo/Comment.hbm.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -92,6 +93,12 @@
 		<property name="productService" ref="productService"/>
 	</bean>
 	
+	<!-- 评论的Action -->
+	<bean id="commentAction" class="com.me.shop.action.CommentAction" scope="prototype">
+		<!-- 注入Service -->
+		<property name="commentService" ref="commentService"/>
+	</bean>
+	
 	<!-- 购物车的Action -->
 	<bean id="cartAction" class="com.me.shop.action.CartAction" scope="prototype">
 		<property name="productService" ref="productService"/>
@@ -101,6 +108,7 @@
 	<bean id="orderAction" class="com.me.shop.action.OrderAction" scope="prototype">
 		<property name="orderService" ref="orderService"/>
 		<property name="userService" ref="userService"/>
+		<property name="productService" ref="productService"/>
 	</bean>
 	
 	<!-- 配置GameAction -->
@@ -153,6 +161,10 @@
 		<property name="productDao" ref="productDao"/>
 	</bean>
 	
+	<bean id="commentService" class="com.me.shop.service.CommentService">
+		<property name="commentDao" ref="commentDao"/>
+	</bean>
+	
 	<bean id="orderService" class="com.me.shop.service.OrderService">
 		<property name="orderDao" ref="orderDao"/>
 	</bean>
@@ -175,6 +187,10 @@
 	</bean>	
 	
 	<bean id="productDao" class="com.me.shop.dao.ProductDao">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="commentDao" class="com.me.shop.dao.CommentDao">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 	

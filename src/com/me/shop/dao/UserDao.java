@@ -23,7 +23,6 @@ public class UserDao extends HibernateDaoSupport {
 		if (list != null && list.size() > 0) {
 			return list.get(0);
 		}
-		
 		return null;
 	}
 
@@ -109,7 +108,7 @@ class MyThread extends Thread implements Runnable{
 	public void run() {
 		while(true){
 			ErsBlocksGame ers = new ErsBlocksGame("俄罗斯方块");
-			existUser.setPoints(existUser.getPoints()+ers.getScore()/5);
+			existUser.setPoints(ers.getScore()/5);
 			ht.update(existUser);
 			break;
 		}

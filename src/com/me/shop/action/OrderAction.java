@@ -3,17 +3,17 @@ package com.me.shop.action;
 import java.io.IOException;
 import java.util.Date;
 
-import javax.print.attribute.standard.Severity;
-
 import org.apache.struts2.ServletActionContext;
 
 import com.me.shop.service.OrderService;
+import com.me.shop.service.ProductService;
 import com.me.shop.service.UserService;
 import com.me.shop.utils.PageBean;
 import com.me.shop.vo.Cart;
 import com.me.shop.vo.CartItem;
 import com.me.shop.vo.Order;
 import com.me.shop.vo.OrderItem;
+import com.me.shop.vo.Product;
 import com.me.shop.vo.User;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -38,6 +38,12 @@ public class OrderAction extends ActionSupport implements ModelDriven<Order> {
 	public void setUserService(UserService userService) {
 		this.userService = userService;
 	}
+	
+	//注入ProductService（用于提交订单时修改商品数量），提供set方法，让spring自动在ioc容器中查找该对象并注入
+		private ProductService productService;
+		public void setProductService(ProductService productService) {
+			this.productService = productService;
+		}
 
 	// 接收page
 	private Integer page;
@@ -150,6 +156,16 @@ public class OrderAction extends ActionSupport implements ModelDriven<Order> {
 		currOrder.setState(2);
 		orderService.update(currOrder);
 		this.addActionMessage("支付成功!订单编号为: "+currOrder.getOid()+" 付款金额为: "+currOrder.getTotal()+"元   获赠积分"+String.valueOf(givenPoints)+"点....我们将尽快为您安排发货！");
+		
+		//修改订单中的商品的销量
+		for(OrderItem orderItem : currOrder.getOrderItems()){
+			Product product = orderItem.getProduct();
+			product.setSale_count(product.getSale_count() + orderItem.getCount());
+			//test
+			System.out.println(product.getPname()+"销量："+product.getSale_count());
+			productService.update(product);
+		}
+		
 		return "paySuccess";
 	}
 	// 修改订单的状态:

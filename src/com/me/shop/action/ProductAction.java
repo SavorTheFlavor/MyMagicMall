@@ -66,6 +66,14 @@ public class ProductAction extends ActionSupport implements
 		product = productService.findByPid(product.getPid());
 		return "findByPid";
 	}
+	
+	// 根据商品的ID进行查询商品，并且要按照销量排名取前五
+	/*public String findByPidForRanking(){
+		// 调用Service的方法完成查询.
+		product = productService.findByPidForRanking(product.getPid());
+		return "findByPidForRanking";
+		
+	}*/
 
 	// 根据分类的id查询商品:
 	public String findByCid() {

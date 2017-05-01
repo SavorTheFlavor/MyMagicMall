@@ -11,6 +11,62 @@
 	function saveCart(){
 		document.getElementById("cartForm").submit();
 	}
+	
+	function getIntroduction() {
+		document.getElementById("introduction").innerHTML = "<div class='title'><strong><s:property value='model.pdesc'/></strong></div><div><img src='${pageContext.request.contextPath }/<s:property value='model.image'/>' /></div>";
+	}
+	
+	//ajax
+	function getComment(){
+		// 1.创建异步交互对象
+		var xhr = createXmlHttp();
+		// 2.设置监听
+		xhr.onreadystatechange = function(){
+			if(xhr.readyState == 4){
+				if(xhr.status == 200){
+					document.getElementById("introduction").innerHTML = xhr.responseText;
+					/* test */
+					//alert("ok");
+				}
+			}
+		}
+		// 3.打开连接
+		xhr.open("GET","${pageContext.request.contextPath}/comment_findByPid.action?time="+new Date().getTime()+"&pid=<s:property value="model.pid"/>",true);
+		
+		/* test */
+		//alert("ok");
+		
+		// 4.发送
+		xhr.send(null);
+		
+		/* test */
+		//alert("ok");
+	}
+	
+	function createXmlHttp(){
+		   var xmlHttp;
+		   try{ // Firefox, Opera 8.0+, Safari
+		        xmlHttp=new XMLHttpRequest();
+		    }
+		    catch (e){
+			   try{// Internet Explorer
+			         xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+			      }
+			    catch (e){
+			      try{
+			         xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+			      }
+			      catch (e){}
+			      }
+		    }
+
+			return xmlHttp;
+		 }
+	
+	/*function change(){
+		var changeDiv = document.getElementById("introduction");//要展示内容的div
+		changeDiv.innerHTML="${pageContext.request.contextPath}/checkImg.action?"+new Date().getTime();
+	}*/
 </script>
 <style type="text/css">
 body{
@@ -71,6 +127,7 @@ body{
 						<strong>￥：<s:property value="model.shop_price"/>元</strong>
 							参 考 价：
 							<del>￥<s:property value="model.market_price"/>元</del>
+							&nbsp;已 出 售：  <strong><s:property value="model.sale_count"/></strong>件
 					</dd>
 				</dl>
 					<dl>
@@ -107,9 +164,11 @@ body{
 			<div id="bar" class="bar">
 				<ul>
 						<li id="introductionTab">
-							<a href="#introduction">商品介绍</a>
+							<a href="#introduction" onclick="getIntroduction()">商品介绍</a>
 						</li>
-						
+						<li id="commentTab">
+							<a href="#comment" onclick="getComment()">商品评价</a>
+						</li>
 				</ul>
 			</div>
 				
