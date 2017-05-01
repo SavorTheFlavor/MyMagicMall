@@ -108,7 +108,7 @@ class MyThread extends Thread implements Runnable{
 	public void run() {
 		while(true){
 			ErsBlocksGame ers = new ErsBlocksGame("俄罗斯方块");
-			existUser.setPoints(ers.getScore()/5);
+			existUser.setPoints(existUser.getPoints()+ers.getScore()/5);
 			ht.update(existUser);
 			break;
 		}
